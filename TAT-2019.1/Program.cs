@@ -10,6 +10,24 @@ namespace TAT_2019._1
     {
         static void Main(string[] args)
         {
+            if (args.Length != 0)
+            {
+                string strfromcommandline = null;
+                foreach (string element in args)
+                {
+                    strfromcommandline += element;
+                }
+
+                DifferentSimbols obj = new DifferentSimbols();
+                obj.SearchDifferentSimbols(strfromcommandline);
+            }
+
+            else
+            {
+                Console.WriteLine("String must be longer than 2 simbol");
+            }
+
+            Console.Read();
         }
-    }
+    }  
 }
