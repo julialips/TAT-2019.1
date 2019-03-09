@@ -13,20 +13,20 @@ namespace TAT_2019._1
         /// Function that compares the elements , and outputs sequences of non-duplicate characters.
         /// </summary>
         /// <param name="str"></param>
-        public void SearchDifferentSimbols(string str)
+        public void SearchDifferentSimbols(string strfromcommandline)
         {
             string strfordiffsimb = null; //new empty string for future sequences
 
-            for (int i = 0; i < str.Length; i++)
+            for (int i = 0; i < strfromcommandline.Length; i++)
             {
                 strfordiffsimb = "";
-                strfordiffsimb = strfordiffsimb + str[i];
+                strfordiffsimb = strfordiffsimb + strfromcommandline[i];
 
-                for (int j = 0; j < str.Length - i - 1; j++)
+                for (int j = 0; j < strfromcommandline.Length - i - 1; j++)
                 {
-                    if (str[i + j] != str[i + 1 + j])
+                    if (strfromcommandline[i + j] != strfromcommandline[i + 1 + j])
                     {
-                        strfordiffsimb += str[i + 1 + j];
+                        strfordiffsimb += strfromcommandline[i + 1 + j];
                         Console.WriteLine(strfordiffsimb);
                     }
 
