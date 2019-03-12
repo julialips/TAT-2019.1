@@ -33,7 +33,7 @@ namespace TAT_2019._1
                 Console.WriteLine("String must be longer than 1 simbol");
             }
 
-            catch (Exception)
+           catch (Exception)
             {
                 Console.WriteLine("Oops,something went wrong,try again!");
             }
