@@ -27,8 +27,6 @@ namespace TAT_2019._1
 
                     DifferentSimbols obj = new DifferentSimbols();
                     obj.SearchDifferentSimbols(strfromcommandline);
-                    
-                    //string strfordiffsimb = null;
                     obj.Displaystrfordiffsimb(obj.SearchDifferentSimbols(strfromcommandline));
 
                 }
