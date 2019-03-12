@@ -3,42 +3,48 @@ using System.Text;
 
 namespace TAT_2019._1
 {
+    /// <summary>
+    /// Class,which have methods for search and display substrings
+    /// </summary>
     class DifferentSimbols
     {
         /// <summary>
-        /// Method SearchDifferentSimbols
+        /// Method SearchDifferentSubstrings
         /// Function that compares the elements , and outputs sequences of non-duplicate characters.
         /// </summary>
         /// <param name="str"></param>
-        public string SearchDifferentSimbols(string strfromcommandline)
+
+        public string SearchDifferentSubstrings(string strFromCommandLine)
         {
-            string strfordiffsimb = null; //new empty string for future sequences
-            StringBuilder subString = new StringBuilder();
+            string strForSubstrings = null; //new empty string for future sequences
+            StringBuilder substring = new StringBuilder();
 
-            for (int i = 0; i < strfromcommandline.Length; i++)
+            for (int i = 0; i < strFromCommandLine.Length; i++)
             {
-                strfordiffsimb = "";
-                strfordiffsimb = strfordiffsimb + strfromcommandline[i];
+                strForSubstrings = "";
+                strForSubstrings += strFromCommandLine[i];
 
-                for (int j = 0; j < strfromcommandline.Length - i - 1; j++)
+                for (int j = 0; j < strFromCommandLine.Length - i - 1; j++)
                 {
-                    if (strfromcommandline[i + j] != strfromcommandline[i + 1 + j])
+                    if (strFromCommandLine[i + j] != strFromCommandLine[i + 1 + j])
                     {
-                        strfordiffsimb += strfromcommandline[i + 1 + j];
-                        subString.AppendLine(strfordiffsimb);
+                        strForSubstrings += strFromCommandLine[i + 1 + j];
+                        substring.AppendLine(strForSubstrings);
                     }
-
                     else break;
                 }
-
             }
-            return subString.ToString();
+            return substring.ToString();
         }
-
-        public string Displaystrfordiffsimb(string strfordiffsimb)
+        /// <summary>
+        /// method, witch only display received substrings
+        /// </summary>
+        /// <param name="strForSubstrings"></param>
+        /// <returns></returns>
+        public string DisplayReceivedSubstrings(string strForSubstrings)
         {
-            Console.WriteLine(strfordiffsimb);
-            return strfordiffsimb;
+            Console.WriteLine(strForSubstrings);
+            return strForSubstrings;
         }
     }
 }
