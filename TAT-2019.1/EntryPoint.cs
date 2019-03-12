@@ -19,6 +19,7 @@ namespace TAT_2019._1
                 if (args.Length != 0) // Checking the condition for the argument
                 {
                     string strfromcommandline = null;
+
                     foreach (string element in args)
                     {
                         strfromcommandline += element; // rewrite items from command line to variable
@@ -26,6 +27,10 @@ namespace TAT_2019._1
 
                     DifferentSimbols obj = new DifferentSimbols();
                     obj.SearchDifferentSimbols(strfromcommandline);
+                    
+                    //string strfordiffsimb = null;
+                    obj.Displaystrfordiffsimb(obj.SearchDifferentSimbols(strfromcommandline));
+
                 }
             }
             catch (FormatException)
@@ -33,7 +38,7 @@ namespace TAT_2019._1
                 Console.WriteLine("String must be longer than 1 simbol");
             }
 
-           catch (Exception)
+            catch (Exception)
             {
                 Console.WriteLine("Oops,something went wrong,try again!");
             }
