@@ -15,11 +15,24 @@ namespace Task2
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            foreach (string line in args)
+            try
             {
-                Console.WriteLine(line);
-               // line += args;
+                foreach (string line in args)
+                {
+                    Console.Write(line);
+                    Console.Write("-->");
+                    // line += args;
+                    var RushianRules = new RushianRules();
+                    RushianRules.ConvertToPhonemes();
+
+                }
+
             }
+            catch (Exception)
+            {
+                Console.WriteLine("Oops,something went wrong,try again!");
+            }
+          
             //var RushianRules = new RushianRules();
             //RushianRules.ConvertToPhonemes();
 
