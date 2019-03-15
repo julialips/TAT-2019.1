@@ -13,7 +13,7 @@ namespace Task2
                 args[i] = null;
                 switch (args[i])
                 {
-                    case "л,м,н" :
+                    case "м" :
                         string newstr = args[i];
                         meth1(newstr);
                         break;

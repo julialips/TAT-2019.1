@@ -23,7 +23,8 @@ namespace Task2
                     Console.Write("-->");
                     // line += args;
                     var RushianRules = new RushianRules();
-                    RushianRules.ConvertToPhonemes();
+                    RushianRules.ConvertToPhonemes(args);
+                    Console.Read();
 
                 }
 
