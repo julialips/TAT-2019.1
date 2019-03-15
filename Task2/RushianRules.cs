@@ -6,9 +6,9 @@ namespace Task2
 {
     class RushianRules
     {
-       private string ConvertToPhonemes(string[] args)
+       public void ConvertToPhonemes(string[] args)
         {
-           
+            Console.Write("hgch");
         }
 
     }

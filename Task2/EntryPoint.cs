@@ -13,9 +13,16 @@ namespace Task2
         /// entrance to the application
         /// </summary>
         /// <param name="args"></param>
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
-            var RushianRules = new RushianRules;
+            foreach (string line in args)
+            {
+                Console.WriteLine(line);
+               // line += args;
+            }
+            //var RushianRules = new RushianRules();
+            //RushianRules.ConvertToPhonemes();
+
             //try
             //{
 
@@ -35,6 +42,6 @@ namespace Task2
             //    return 2;
             //}
         }
+
     }
 }
-
