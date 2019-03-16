@@ -33,10 +33,12 @@ namespace Task2
                 for (int i = 0; i < converterToPhonemes.Length; i++)
                 {
                     converterToPhonemes[i] = new RushianRules(args[i]);
-                    converterToPhonemes[i].PrintPhonemes(converterToPhonemes[i].ConvertToPhonemes());
+                    converterToPhonemes[i].PrintPhonemes(converterToPhonemes[i].Define());
+                   
                 }
                 Console.Read();
                 return 0;
+              
             }
             catch (FormatException)
             {
@@ -50,27 +52,7 @@ namespace Task2
                 return 2;
             }
           
-            //var RushianRules = new RushianRules();
-            //RushianRules.ConvertToPhonemes();
-
-            //try
-            //{
-
-
-            //    return 0;
-            //}
-
-            //catch (FormatException)
-            //{
-            //    Console.WriteLine("String must be longer than 1 simbol");
-            //    return 1;
-            //}
-
-            //catch (Exception)
-            //{
-            //    Console.WriteLine("Oops,something went wrong,try again!");
-            //    return 2;
-            //}
+         
         }
 
     }

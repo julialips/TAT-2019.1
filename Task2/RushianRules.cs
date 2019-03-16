@@ -5,59 +5,39 @@ using System.Collections.Generic;
 
 namespace Task2
 {
+    /// <summary>
+    /// class contains the methods of searching and displaying phonemes
+    /// </summary>
     class RushianRules
     {
        
-        private int accent = -2;
+        private int accent = -1;
         private string simbol = string.Empty;
         private StringBuilder phonemes = new StringBuilder();
 
 
-        private readonly List<char> vowelsSoft = new List<char>()
-            {
-                'и', 'е', 'ё', 'ю', 'я'
-            };
-
-        private readonly List<char> vowelsHard = new List<char>()
-            {
-                'а', 'о', 'э', 'ы', 'у'
-            };
-
-        private readonly List<char> consonantsHard = new List<char>()
-            {
-               'б', 'в', 'г', 'д', 'ж', 'з','к', 'л', 'м', 'н',
-               'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ш'
-            };
-
-        private readonly List<char> consonantsSoft = new List<char>()
-            {
-                'ц', 'щ', 'й'
-            };
-
-        private readonly List<char> consonantsDeaf = new List<char>()
-            {
-               'к', 'п', 'с', 'т', 'ф', 'х', 'ц', 'ш', 'щ'
-            };
-
-        private readonly List<char> consonantsVoiced = new List<char>()
-            {
-               'б', 'в', 'г', 'д', 'ж', 'з', 'л', 'м', 'н',
-                'р', 'й'
-            };
+        private readonly List<char> vowels = new List<char>
+        {
+            'а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э',  'ю', 'я'
+        };
+        private readonly List<char> consonants = new List<char>
+        {
+            'б', 'в', 'г', 'д', 'ж', 'з', 'й', 'к', 'л', 'м', 'н', 'п', 'р', 'с', 'т', 'ф', 'х', 'ц', 'ч', 'ш', 'щ'
+        };
 
         private readonly Dictionary <char, char> vowelBeforeConsonant = new Dictionary<char, char>
         {
+            ['е'] = 'э',
+            ['ё'] = 'о',
             ['ю'] = 'у',
             ['я'] = 'а',
-            ['ё'] = 'о',
-            ['е'] = 'э'
         };
         private readonly Dictionary <char, string> vowelBeforeVowel = new Dictionary<char, string>
         {
-            ['ю'] = "йу",
-            ['я'] = "йа",
+            ['е'] = "йэ",
             ['ё'] = "йо",
-            ['е'] = "йэ"
+            ['ю'] = "йу",
+            ['я'] = "йа",    
         };
         private readonly Dictionary <char, char> RingingDeaf = new Dictionary<char, char>
         {
@@ -69,14 +49,17 @@ namespace Task2
             ['з'] = 'с'
         };
 
-    
 
+        /// <summary>
+        /// constructor our class
+        /// </summary>
+        /// <param name="line"></param>
         public RushianRules(string line)
         {
             simbol = line;
         }
 
-        public StringBuilder RushianRules()
+        public StringBuilder Define()
         {
             if (simbol.Contains('+'))
             {
@@ -90,7 +73,7 @@ namespace Task2
                 {
                     case "vowel":
 
-                        if (i != 0 && DefineTypeOfSimbol(simbol[i - 1], vowels, consonants) ==
+                        if (i != 0 && DefineTypeOfSymbol(simbol[i - 1], vowels, consonants) ==
                             "consonant" && vowelBeforeConsonant.ContainsKey(simbol[i]))
                         {
                             // Add value to phonemes.
@@ -107,6 +90,7 @@ namespace Task2
                         // Go if dictionaries don't contains this vowel.
                       
                         continue;
+
 
                     case "different":
                         // If  'ъ', continue.
@@ -146,7 +130,7 @@ namespace Task2
 
         public void PrintPhonemes(StringBuilder phonemes)
         {
-            Console.WriteLine(simbol + " -> " + phonemes);
+            Console.WriteLine( phonemes);
         }
 
     }
