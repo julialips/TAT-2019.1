@@ -24,21 +24,16 @@ namespace Task2
                 if(args.Length == 0)
                     throw new FormatException();
 
-                foreach (string line in args)
+                for (int i = 0; i < args.Length; i++)
                 {
-                    Console.Write(line);
-                    Console.Write("-->");
+                    Console.Write(args[i]);
+                    Console.Write(" >>> ");
                 }
-                RushianRules[] converterToPhonemes = new RushianRules[args.Length];
-                for (int i = 0; i < converterToPhonemes.Length; i++)
-                {
-                    converterToPhonemes[i] = new RushianRules(args[i]);
-                    converterToPhonemes[i].PrintPhonemes(converterToPhonemes[i].Define());
-                   
-                }
+
+                var converter = new Converter();
+                Console.WriteLine(converter.Convert(args[0]));
                 Console.Read();
                 return 0;
-              
             }
             catch (FormatException)
             {
@@ -51,9 +46,6 @@ namespace Task2
                 Console.WriteLine("Oops,something went wrong,try again!");
                 return 2;
             }
-          
-         
         }
-
     }
 }
