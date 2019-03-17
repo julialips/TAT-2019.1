@@ -16,13 +16,12 @@ namespace Task2
         /// <returns 0>Good start of program</returns>
         /// <returns 1>Empty string</returns> 
         /// <returns 2>Something went wrong</returns>
-        /// 
         static int Main(string[] args)
         {
             try
             {
-                if(args.Length == 0)
-                    throw new FormatException();
+                if (args.Length == 0)
+                throw new FormatException();
 
                 for (int i = 0; i < args.Length; i++)
                 {
@@ -32,12 +31,12 @@ namespace Task2
 
                 var converter = new Converter();
                 Console.WriteLine(converter.Convert(args[0]));
-                Console.Read();
                 return 0;
             }
+
             catch (FormatException)
             {
-                Console.WriteLine("The entered string is empty, try again!");
+                Console.WriteLine("The entered string is empty , try again!");
                 return 1;
             }
 

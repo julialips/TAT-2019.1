@@ -37,7 +37,13 @@ namespace Task2
             dictСonsonants.Add('ж', 'ш');
             dictСonsonants.Add('г', 'к');
         }
-
+        /// <summary>
+        /// universal method for replasing simbol char
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="index"></param>
+        /// <param name="replaceLetter"></param>
+        /// <returns></returns>
         private string ReplaceOneLetter(string str, int index, char replaceLetter)
         {
             var str1 = str.Substring(0, index);
@@ -46,6 +52,13 @@ namespace Task2
             str2 = str2.Replace(str2[0], replaceLetter);
             return str1 + str2 + str3;
         }
+        /// <summary>
+        /// universal method for replasing simbol type string
+        /// </summary>
+        /// <param name="str"> string witch we cut </param>
+        /// <param name="index"> from this index</param>
+        /// <param name="replaceLetter"> letter on witch replace</param>
+        /// <returns></returns>
         private string ReplaceOneLetter(string str, int index, string replaceLetter)
         {
             var str1 = str.Substring(0, index);
@@ -54,7 +67,11 @@ namespace Task2
             str2 = str2.Replace(str2[0].ToString(), replaceLetter);
             return str1 + str2 + str3;
         }
-
+        /// <summary>
+        /// method, witch convert first soft vowels 
+        /// and two vowel in pair of 2 soft vowels
+        /// </summary>
+        /// <returns></returns>
         private string FirstLetter()
         {
             if (softVowels.Contains(word[0]))
@@ -63,6 +80,10 @@ namespace Task2
             }
             return word;
         }
+        /// <summary>
+        /// method for converting unstress O to A
+        /// </summary>
+        /// <returns></returns>
         private string ConvertOtoA()
         {
             word = word.Replace('о', 'а');
@@ -70,6 +91,10 @@ namespace Task2
             word = word.Replace("+", string.Empty);
             return word;
         }
+        /// <summary>
+        /// this method for softing consonants before vowels by '
+        /// </summary>
+        /// <returns></returns>
         private string Softing()
         {
             for (int i = 1; i < word.Length; i++)
@@ -83,6 +108,10 @@ namespace Task2
             }
             return word;
         }
+        /// <summary>
+        /// method ,witch convert word after hard vowels before soft vowels 
+        /// </summary>
+        /// <returns></returns>
         private string VowelAfterVowel()
         {
             for (int i = 1; i < word.Length; i++)
@@ -94,6 +123,10 @@ namespace Task2
             }
             return word;
         }
+        /// <summary>
+        /// method ,witch convert word after Ь,Ъ letters 
+        /// </summary>
+        /// <returns></returns>
         private string VowelAfterSoftHardSign()
         {
             for (int i = 1; i < word.Length; i++)
@@ -106,6 +139,10 @@ namespace Task2
             }
             return word;
         }
+        /// <summary>
+        /// method, witch deafen voice consonant
+        /// </summary>
+        /// <returns></returns>
         private string Voicing()
         {
             for (int i = 1; i < word.Length; i++)
@@ -117,6 +154,10 @@ namespace Task2
             }
             return word;
         }
+        /// <summary>
+        /// method for converting hard and soft signs to '
+        /// </summary>
+        /// <returns></returns>
         private string SoftingLast()
         {
             if (hardSoftSigns.Contains(word[word.Length - 1]))
@@ -125,7 +166,11 @@ namespace Task2
             }
             return word;
         }
-
+        /// <summary>
+        /// one big method, consist al little methods for converting
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
         public string Convert(string word)
         {
             this.word = word;
