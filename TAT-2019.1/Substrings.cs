@@ -4,16 +4,15 @@ using System.Text;
 namespace TAT_2019._1
 {
     /// <summary>
-    /// Class,which have methods for search and display substrings
+    /// Class,which have methods for search and display substringsks
     /// </summary>
-    class DifferentSimbols
+    class Substrings
     {
         /// <summary>
-        /// Method SearchDifferentSubstrings
+        /// Method Search different substrings
         /// Function that compares the elements , and outputs sequences of non-duplicate characters.
         /// </summary>
         /// <param name="str"></param>
-
         public string SearchDifferentSubstrings(string strFromCommandLine)
         {
             string strForSubstrings = null; //new empty string for future sequences

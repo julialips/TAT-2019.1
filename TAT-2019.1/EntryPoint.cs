@@ -19,25 +19,23 @@ namespace TAT_2019._1
         {
             try
             {
-                if (args[0].Length < 2 && args.Length < 2)
+                if (args.Length < 2)
                 {
                     throw new FormatException();
                 }
                 if (args.Length != 0) // Checking the condition for the argument
                 {
-                    var searcher = new DifferentSimbols();
+                    var searcher = new Substrings();
                     searcher.SearchDifferentSubstrings(args[0]);
                     searcher.DisplayReceivedSubstrings(searcher.SearchDifferentSubstrings(args[0]));
                 }
                 return 0;
             }
-
             catch (FormatException)
             {
                 Console.WriteLine("String must be longer than 1 simbol");
                 return 1;
             }
-
             catch (Exception)
             {
                 Console.WriteLine("Oops,something went wrong,try again!");
