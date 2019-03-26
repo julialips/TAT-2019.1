@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Task_Dev_3
 {
@@ -7,11 +7,6 @@ namespace Task_Dev_3
     /// </summary>
     class Company
     {
-        private Junior junior;
-        private Middle middle;
-        private Senior senior;
-        private Lead lead;
-        private int InputProductivity { get; set; }
         int leadAmount;
         int middleAmount;
         int seniorAmount;
@@ -20,6 +15,12 @@ namespace Task_Dev_3
         int midcoast;
         int sencoast;
         int leadcoast;
+        private Junior junior;
+        private Middle middle;
+        private Senior senior;
+        private Lead lead;
+        private int InputProductivity { get; set; }
+       
         public Company(int inputProductivity)
         {
             InputProductivity = inputProductivity;
@@ -68,6 +69,7 @@ namespace Task_Dev_3
             Console.WriteLine("You choose the second criterion");
             if (inputProductivity <= 0)
                 throw new Exception();
+            
             juniorAmount = inputProductivity / junior.Productivity;
             middleAmount = inputProductivity / middle.Productivity;
             seniorAmount = inputProductivity / senior.Productivity;
@@ -128,7 +130,7 @@ namespace Task_Dev_3
         /// <param name="inputProductivity"></param>
         public void ThirdCriterionChooseandDisplay(int money, int inputProductivity)
         {
-            Console.WriteLine("You choose the third criterion , try to choose 1 or 2 , they are bette:)");   
+            Console.WriteLine("You choose the third criterion , try to choose 1 or 2 , they are better:)");   
         }
     }
 }
