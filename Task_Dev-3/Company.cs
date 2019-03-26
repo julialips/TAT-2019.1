@@ -34,7 +34,7 @@ namespace Task_Dev_3
         /// </summary>
         /// <param name="money"> input parametr from console </param>
         /// <param name="inputProductivity"> parametr from console </param>
-        public void FirstCriterionChooseandDisplay(int money, int inputProductivity)
+        public void MaximumProductivityDisplay(int money, int inputProductivity)
         {   
             Console.WriteLine("You choose the first criterion");
             
@@ -64,7 +64,7 @@ namespace Task_Dev_3
         /// </summary>
         /// <param name="money"> input parametr from console </param>
         /// <param name="inputProductivity"> parametr from console </param>
-        public void SecondCriterionChooseandDisplay(int money, int inputProductivity)
+        public void MinimumCostDisplay(int money, int inputProductivity)
         {
             Console.WriteLine("You choose the second criterion");
             if (inputProductivity <= 0)
@@ -128,7 +128,7 @@ namespace Task_Dev_3
         /// </summary>
         /// <param name="money"></param>
         /// <param name="inputProductivity"></param>
-        public void ThirdCriterionChooseandDisplay(int money, int inputProductivity)
+        public void MinimumNumberHigherThanJuniorDisplay(int money, int inputProductivity)
         {
             Console.WriteLine("You choose the third criterion , try to choose 1 or 2 , they are better:)");   
         }
