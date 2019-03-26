@@ -16,20 +16,16 @@ namespace Task_Dev_3
             try
             {
                 int inputProductivity;
-                int money;
-                
+                int money;   
                 if (args[0].Length > 1)
                 {
                     throw new FormatException();
                 }
-
                 Console.WriteLine("Money to buy workers : ");
                 money = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Total productivity : ");
                 inputProductivity = Convert.ToInt32(Console.ReadLine());
-
                 Company company = new Company(inputProductivity);
-
                 foreach (string el in args)
                 {
                     if (el == "1")
@@ -40,7 +36,6 @@ namespace Task_Dev_3
                         company.ThirdCriterionChooseandDisplay(money, inputProductivity);                    
                 }
             }
-
             catch (FormatException)
             {
                 Console.WriteLine("OOps, you must chose ONE criterion :(");
