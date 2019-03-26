@@ -11,19 +11,15 @@ namespace Task_Dev_3
         private Middle middle;
         private Senior senior;
         private Lead lead;
-
         private int InputProductivity { get; set; }
-
         int leadAmount;
         int middleAmount;
         int seniorAmount;
         int juniorAmount;
-
         int juncoast;
         int midcoast;
         int sencoast;
         int leadcoast;
-
         public Company(int inputProductivity)
         {
             InputProductivity = inputProductivity;
@@ -40,28 +36,25 @@ namespace Task_Dev_3
         public void FirstCriterionChooseandDisplay(int money, int inputProductivity)
         {   
             Console.WriteLine("You choose the first criterion");
-
+            
             leadAmount = money / lead.Salary;
             int leadLeftBalance = money % lead.Salary;
-
+            
             middleAmount = leadLeftBalance / middle.Salary;
             int middleLeftBalance = leadLeftBalance % middle.Salary;
-
+            
             seniorAmount = middleLeftBalance / senior.Salary;
             int seniorLeftBalance = middleLeftBalance % senior.Salary;
-
+            
             juniorAmount = seniorLeftBalance / junior.Salary;
             int juniorLeftBalance = seniorLeftBalance % junior.Salary;
 
             Console.WriteLine("Leads:");
             Console.WriteLine(leadAmount);
-
             Console.WriteLine("Middles:");
             Console.WriteLine(middleAmount);
-
             Console.WriteLine("Seniors:");
             Console.WriteLine(seniorAmount);
-
             Console.WriteLine("Juniors:");
             Console.WriteLine(juniorAmount);
         }
@@ -75,7 +68,6 @@ namespace Task_Dev_3
             Console.WriteLine("You choose the second criterion");
             if (inputProductivity <= 0)
                 throw new Exception();
-
             juniorAmount = inputProductivity / junior.Productivity;
             middleAmount = inputProductivity / middle.Productivity;
             seniorAmount = inputProductivity / senior.Productivity;
@@ -85,7 +77,7 @@ namespace Task_Dev_3
             midcoast = middleAmount * middle.Salary;
             sencoast = seniorAmount * senior.Salary;
             leadcoast = leadAmount * lead.Salary;
-
+            
             if (juniorAmount > middleAmount && juniorAmount > seniorAmount && juniorAmount > leadAmount)
             {
                 if (money >= juncoast)
@@ -93,10 +85,9 @@ namespace Task_Dev_3
                     Console.WriteLine("Juniors:");
                     Console.WriteLine(juniorAmount);
                 }
-
                 else { Console.WriteLine("NOT enough money,for required productivity!"); }
             }
-
+            
             if (middleAmount > juniorAmount && middleAmount > seniorAmount && middleAmount > leadAmount)
             {
                 if (money >= middleAmount)
@@ -104,11 +95,10 @@ namespace Task_Dev_3
                     Console.WriteLine("Middles:");
                     Console.WriteLine(middleAmount);
                 }
-
                 else
                 { Console.WriteLine("NOT enough money,for required productivity!"); }
             }
-
+            
             if (seniorAmount > juniorAmount && seniorAmount > middleAmount && seniorAmount > leadAmount)
             {
                 if (money >= seniorAmount)
@@ -116,11 +106,10 @@ namespace Task_Dev_3
                     Console.WriteLine("Seniors:");
                     Console.WriteLine(seniorAmount);
                 }
-
                 else
                 { Console.WriteLine("NOT enough money,for required productivity!"); }
             }
-
+            
             if (leadAmount > juniorAmount && leadAmount > middleAmount && leadAmount > seniorAmount)
             {
                 if (money >= leadAmount)
@@ -128,7 +117,6 @@ namespace Task_Dev_3
                     Console.WriteLine("Leads:");
                     Console.WriteLine(leadAmount);
                 }
-
                 else
                 { Console.WriteLine("NOT enough money,for required productivity!"); }
             }
