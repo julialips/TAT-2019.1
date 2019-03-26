@@ -29,11 +29,11 @@ namespace Task_Dev_3
                 foreach (string el in args)
                 {
                     if (el == "1")
-                        company.FirstCriterionChooseandDisplay(money, inputProductivity);
+                        company.MaximumProductivityDisplay(money, inputProductivity);
                     if (el == "2")
-                        company.SecondCriterionChooseandDisplay(money, inputProductivity);        
+                        company.MinimumCostDisplay(money, inputProductivity);        
                     if (el == "3")
-                        company.ThirdCriterionChooseandDisplay(money, inputProductivity);                    
+                        company.MinimumNumberHigherThanJuniorDisplay(money, inputProductivity);                    
                 }
             }
             catch (FormatException)
