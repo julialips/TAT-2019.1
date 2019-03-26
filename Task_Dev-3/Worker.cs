@@ -1,4 +1,4 @@
-﻿namespace Task_Dev_3
+namespace Task_Dev_3
 {
     /// <summary>
     /// base abstruct class for inheritance
@@ -7,7 +7,9 @@
     {
         public int Salary { get; set; }
         public int Productivity { get; set; }
-
+        /// <summary>
+        /// it's a constructor,where we set the initial values of the fields 
+        /// </summary>
         public Worker()
         {
             Salary = 250;
