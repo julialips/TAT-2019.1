@@ -23,8 +23,8 @@ namespace Task_Dev_4
             textmaterials = WriteText(100000);
             presentation = new Presentation();
             presentation.URI = $"{WriteText(10)}.com";
-            //presentation.format = new Format();
-            // presentation.format = random.Next(0, 2);
+            presentation.format = new Format();
+            presentation.format = random.Next(0, 2);
             
             ListOfSeminars = new List<Seminar>();
             ListOfLaboratory = new List<Laboratory>();

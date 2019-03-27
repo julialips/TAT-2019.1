@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Discipline.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Format.cs" />
     <Compile Include="IDandDescribe.cs" />
     <Compile Include="Laboratory.cs" />
     <Compile Include="Lection.cs" />

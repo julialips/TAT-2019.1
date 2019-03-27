@@ -4,15 +4,8 @@
     /// class contains URI and format of presentation
     /// </summary>
    class Presentation
-   {
-      //  public struct Presentationn
-       // {  
-            public string URI { get; set; }
-            public enum Format 
-        {
-            Unknown,
-            PPT,
-            PDF
-        }
+   { 
+        public string URI { get; set; }
+        public Format format;
     }
 }
