@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task_Dev_4
 {
@@ -15,7 +11,7 @@ namespace Task_Dev_4
         /// Entry point to program
         /// </summary>
         /// <param name="args"></param>
-        static void Main(string[] args)
+        static void Main()
         {
             try
             {
@@ -23,7 +19,7 @@ namespace Task_Dev_4
                 Discipline physics = new Discipline();
                 Console.WriteLine(agila.WriteText(20));
 
-              //  Console.WriteLine(agila.Equals(physics));
+               // Console.WriteLine(agila.Equals(physics));
             }
             catch (Exception ex)
             {

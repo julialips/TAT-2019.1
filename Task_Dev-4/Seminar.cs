@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Task_Dev_4
 {
@@ -10,9 +11,9 @@ namespace Task_Dev_4
         List<string> task;
         List<string> questions;
         List<string> answers;
-
+        Random random = new Random();
         /// <summary>
-        /// 
+        /// constructor of our class
         /// </summary>
         public Seminar() : base()
         {
@@ -23,7 +24,7 @@ namespace Task_Dev_4
             for (int i = 0; i < random.Next(1, 15); i++)
             {
                 task.Add(WriteText(30));
-            }
+            }    
             //Number of questions and answer the questions equals.
             for (int i = 0; i < random.Next(1, 15); i++)
             {

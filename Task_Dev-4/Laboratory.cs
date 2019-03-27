@@ -15,11 +15,12 @@
         /// </summary>
         /// <param name="originalGUID"></param>
         /// <param name="originalDescription"></param>
-        public Laboratory(string originalGUID, string originalDescription)
+        public Laboratory(int originalGUID, string originalDescription)
         {
             GUID= originalGUID;
             Description = originalDescription;
         }
+
         /// <summary>
         /// 
         /// </summary>

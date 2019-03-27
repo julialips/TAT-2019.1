@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Task_Dev_4
 {
@@ -13,16 +14,16 @@ namespace Task_Dev_4
         string textmaterials;
         public List<Seminar> ListOfSeminars { get; }
         public List<Laboratory> ListOfLaboratory { get; }
-
-       /// <summary>
-       /// Constructor of our class
-       /// </summary>
+        Random random = new Random();
+        /// <summary>
+        /// Constructor of our class
+        /// </summary>
         public Lection() : base()
         {
             textmaterials = WriteText(100000);
             presentation = new Presentation();
             presentation.URI = $"{WriteText(10)}.com";
-            // presentation.format = new Format();
+            //presentation.format = new Format();
             // presentation.format = random.Next(0, 2);
             
             ListOfSeminars = new List<Seminar>();

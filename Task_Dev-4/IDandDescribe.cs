@@ -8,16 +8,19 @@ namespace Task_Dev_4
     /// </summary>
    public abstract class IDandDescribe
     {
-        public string GUID { get; set; }
+        public int GUID { get; set; }
         public string Description { get; set; }
-        protected Random random;
+         Random random = new Random();
 
         /// <summary>
         /// Constructor of our class
         /// </summary>
         public IDandDescribe()
         {
-            GUID = GUID.ToString();
+            for (int i = 0; i < 20; i++)
+            {
+                GUID = i;
+            }
             Description = WriteText(256);
         }
 
@@ -28,11 +31,10 @@ namespace Task_Dev_4
         /// <returns></returns>
         public string WriteText(int limit)
         {
-            string [] text = new string[256];
-          //Random rand = new Random();
-            string sometext = text[random.Next(0, text.Length - 1)];
+            string text ="frdhbjhbdbhsdcv";
+            char sometext = text[random.Next(0, text.Length - 1)];
             Console.WriteLine(sometext);
-            return sometext;
+            return sometext.ToString();
         }
         /// <summary>
         /// method to override ,and return description 

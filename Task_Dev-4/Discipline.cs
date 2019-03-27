@@ -13,7 +13,7 @@ namespace Task_Dev_4
         List<Lection> lectionsList = new List<Lection>();
         List<Seminar> seminarsList = new List<Seminar>();
         List<Laboratory> laboratoriesList = new List<Laboratory>();
-
+        Random random = new Random();
         /// <summary>
         /// method to override ToString
         /// </summary>
