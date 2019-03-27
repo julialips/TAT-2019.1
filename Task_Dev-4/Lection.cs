@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace Task_Dev_4
@@ -15,6 +15,7 @@ namespace Task_Dev_4
         public List<Seminar> ListOfSeminars { get; }
         public List<Laboratory> ListOfLaboratory { get; }
         Random random = new Random();
+        
         /// <summary>
         /// Constructor of our class
         /// </summary>
@@ -23,27 +24,22 @@ namespace Task_Dev_4
             textmaterials = WriteText(100000);
             presentation = new Presentation();
             presentation.URI = $"{WriteText(10)}.com";
-            //presentation.format = new Format();
-            // presentation.format = random.Next(0, 2);
+            presentation.format = new Format();
+            presentation.format = random.Next(0, 2);
             
             ListOfSeminars = new List<Seminar>();
             ListOfLaboratory = new List<Laboratory>();
-           for (int i = 0; i < random.Next(1, 3); i++)
+            
+            for (int i = 0; i < random.Next(1, 3); i++)
             {
                 ListOfSeminars.Add(new Seminar());
             }
-           for (int i = 0; i < random.Next(1, 6); i++)
+            for (int i = 0; i < random.Next(1, 6); i++)
             {
                 ListOfLaboratory.Add(new Laboratory());
             }
         }
-
-        public enum Format
-        {
-            Unknown,
-            PPT,
-            PDF
-        }
+        
         /// <summary>
         /// Override method
         /// </summary>
@@ -51,8 +47,6 @@ namespace Task_Dev_4
         public override string ToString()
         {
             return "It's a lecture!";
-        }
-
-      
+        }  
     }
 }
