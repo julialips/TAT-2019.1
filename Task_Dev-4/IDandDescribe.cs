@@ -31,7 +31,7 @@ namespace Task_Dev_4
         /// <returns></returns>
         public string WriteText(int limit)
         {
-            string text ="frdhbjhbdbhsdcv";
+            string text ="abcdifjklmnprstyfhswqepz";
             char sometext = text[random.Next(0, text.Length - 1)];
             Console.WriteLine(sometext);
             return sometext.ToString();

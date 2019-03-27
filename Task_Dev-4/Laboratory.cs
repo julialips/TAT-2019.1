@@ -22,7 +22,7 @@
         }
 
         /// <summary>
-        /// 
+        /// method to cloning
         /// </summary>
         /// <returns></returns>
         public object Clone()
@@ -30,6 +30,5 @@
             Laboratory laboratoryClone = new Laboratory(GUID, Description);
             return laboratoryClone;
         }
-
     }
 }
