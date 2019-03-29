@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Task_Dev_4
 {
@@ -14,6 +12,7 @@ namespace Task_Dev_4
         List<Seminar> seminarsList = new List<Seminar>();
         List<Laboratory> laboratoriesList = new List<Laboratory>();
         Random random = new Random();
+
         /// <summary>
         /// method to override ToString
         /// </summary>
@@ -28,8 +27,6 @@ namespace Task_Dev_4
         /// </summary>
         public Discipline() : base()
         {
-            ///  lectionsList = new List<Lecture>();
-            // Add random number of lectures to list.
             for (int i = 0; i < random.Next(5, 20); i++)
             {
                 lectionsList.Add(new Lection());

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Task_Dev_4
 {
@@ -10,7 +9,7 @@ namespace Task_Dev_4
     {
         public int GUID { get; set; }
         public string Description { get; set; }
-         Random random = new Random();
+        Random random = new Random();
 
         /// <summary>
         /// Constructor of our class

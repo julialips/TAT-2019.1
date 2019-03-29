@@ -24,7 +24,7 @@ namespace Task_Dev_4
             presentation = new Presentation();
             presentation.URI = $"{WriteText(10)}.com";
             presentation.format = new Format();
-            presentation.format = random.Next(0, 2);
+            presentation.format =(Format)random.Next(0, 2);
             
             ListOfSeminars = new List<Seminar>();
             ListOfLaboratory = new List<Laboratory>();
@@ -38,12 +38,6 @@ namespace Task_Dev_4
             }
         }
 
-        public enum Format
-        {
-            Unknown,
-            PPT,
-            PDF
-        }
         /// <summary>
         /// Override method
         /// </summary>

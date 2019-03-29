@@ -18,7 +18,7 @@ namespace Task_Dev_4
                 Discipline agila = new Discipline();     
                 Discipline physics = new Discipline();
                 Console.WriteLine(agila.WriteText(20));
-                Console.WriteLine(agila.Equals(physics));
+                Console.WriteLine(agila.Equals(physics)); 
             }
             catch (Exception ex)
             {
