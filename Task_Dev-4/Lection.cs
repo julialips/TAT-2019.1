@@ -15,6 +15,7 @@ namespace Task_Dev_4
         public List<Seminar> ListOfSeminars { get; }
         public List<Laboratory> ListOfLaboratory { get; }
         Random random = new Random();
+
         /// <summary>
         /// Constructor of our class
         /// </summary>
@@ -46,7 +47,5 @@ namespace Task_Dev_4
         {
             return "It's a lecture!";
         }
-
-      
     }
 }
