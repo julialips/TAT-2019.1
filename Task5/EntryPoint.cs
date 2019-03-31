@@ -16,20 +16,22 @@ namespace Task5
             {
                 Point point = new Point();
                 point.SetPoint(100, 200, 800);
-                Bird bird = new Bird();
-                bird.WhoAmI();
-                bird.FlyTo(point);
-                bird.GetFlyTime();
 
-                Plane plane = new Plane();
-                plane.WhoAmI();
+                Bird bird = new Bird();
+                Console.WriteLine(bird.WhoAmI());
+                bird.FlyTo(point);
+                Console.WriteLine(bird.GetFlyTime());
+                
+
+               Plane plane = new Plane();
+                Console.WriteLine(plane.WhoAmI());
                 plane.FlyTo(point);
-                plane.GetFlyTime();
+                Console.WriteLine(plane.GetFlyTime());
 
                 SpaceShip spaceShip = new SpaceShip();
-                spaceShip.WhoAmI();
+                Console.WriteLine(spaceShip.WhoAmI());
                 spaceShip.FlyTo(point);
-                spaceShip.GetFlyTime();
+                Console.WriteLine(spaceShip.GetFlyTime());
             }
             catch
             {

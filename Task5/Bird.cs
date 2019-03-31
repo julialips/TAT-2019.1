@@ -46,7 +46,7 @@ namespace Task5
         /// <returns> time</returns>
         public double GetFlyTime()
         {
-            speedFlyBird = random.Next(0,20) ;
+            speedFlyBird = random.Next(1,20) ;
             if(speedFlyBird == 0)
             {
                 point.SetPoint(0, 0, 0);
