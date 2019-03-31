@@ -1,35 +1,40 @@
 using System;
-using System.Collections.Generic;
-/*
-1. done 
 
-Создайте структуру Point, которая содержит три координаты.
-2. done
-
-    Создать интерфейс IFlyable с методами FlyTo (Point newPoint), WhoAmI (), GetFlyTime ().
-3.done
-Создайте 3 класса Bird, Plane, SpaceShip, которые реализуют интерфейс IFly.
-
-При реализации метода GetFlyTime () для каждого класса используйте следующее:
-- у птицы случайная скорость полета в диапазоне (0-20) км / час
-- Самолет развивает скорость +10 км / час каждые 10 км полета, начиная с 200 км / час;
-- Космический корабль имеет постоянную скорость 8000 км / с
-
-Получить время полета для 3 объектов этого класса, каждый объект летит из точки (0,0,0) в точку (100, 200, 800)*/
 namespace Task5
 {
+    /// <summary>
+    /// Main class of program
+    /// </summary>
     class EntryPoint
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// main method, which runs other methods, and creating objects
+        /// </summary>
+        static void Main()
         {
-            SpaceShip s = new SpaceShip();
-            s.WhoAmI();
-           // s.GetFlyTime();
-          
-            //Bird b = new Bird();
-            //b.WhoAmI();
-            //b.GetFlyTime();
-          
+            try
+            {
+                Point point = new Point();
+                point.SetPoint(100, 200, 800);
+                Bird bird = new Bird();
+                bird.WhoAmI();
+                bird.FlyTo(point);
+                bird.GetFlyTime();
+
+                Plane plane = new Plane();
+                plane.WhoAmI();
+                plane.FlyTo(point);
+                plane.GetFlyTime();
+
+                SpaceShip spaceShip = new SpaceShip();
+                spaceShip.WhoAmI();
+                spaceShip.FlyTo(point);
+                spaceShip.GetFlyTime();
+            }
+            catch
+            {
+                Console.WriteLine("Something went wrong, try again!");
+            }            
         }
     }
 }

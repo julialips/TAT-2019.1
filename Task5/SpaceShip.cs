@@ -1,50 +1,51 @@
-﻿using System;
-
-namespace Task5
+﻿namespace Task5
 {
+    /// <summary>
+    /// class, which have methods inherited and realized from interface
+    /// </summary>
     class SpaceShip : IFlyable
     {
-        int speedFlySpaceShip = 8000;
-        // double lengthway;
-
-        public void FlyTo(int point)
+        Point point;
+        double speedFlySpaceShip;
+        double lengthway;
+       
+        /// <summary>
+        /// constructor of our class, that initialize start point and speed
+        /// </summary>
+        public SpaceShip()
         {
-            Console.WriteLine("на марс");
+            point.SetPoint(0, 0, 0);
+            speedFlySpaceShip = 8000; 
         }
 
-        public void WhoAmI()
+        /// <summary>
+        /// method for calculating distance between start and finish points
+        /// </summary>
+        /// <param name="finishpoint"> finish point of distance </param>
+        public void FlyTo(Point finishpoint)
         {
-          
-            
-            Console.WriteLine("I am is SpaceShip");
+           LengthWay calculatelength = new LengthWay();
+           calculatelength.CalculateLength(point, finishpoint);
+           point.SetPoint(finishpoint.X, finishpoint.Y, finishpoint.Z);
         }
 
-        public void  GetFlyTime()
+        /// <summary>
+        /// method witch return the name of object
+        /// </summary>
+        /// <returns> string name of object </returns>
+        public string WhoAmI()
         {
-            FlyTime fl = new FlyTime();
-            fl.lenghtAndTime(8000/*,lengthway*/);
-            
+          return "I am SpaceShip";
         }
-       /* {
-            Point startpoint;
-            startpoint.x = 0;
-            startpoint.y = 0;
-            startpoint.z = 0;
 
-            Point finishpoint;
-            finishpoint.x = 100;
-            finishpoint.y = 200;
-            finishpoint.z = 800;
-
-            lengthway = Math.Sqrt(Math.Pow((finishpoint.x - startpoint.x), 2) + Math.Pow((finishpoint.y - startpoint.y), 2) + Math.Pow((finishpoint.z - startpoint.z), 2));
-            Console.WriteLine($"the lengthway = { lengthway}");
+        /// <summary>
+        /// method to determine the time of fly
+        /// </summary>
+        /// <returns> time of fly </returns>
+        public double  GetFlyTime()
+        {  
             double time = lengthway / speedFlySpaceShip;
-            Console.WriteLine($"time in flying is {time}");
-        }*/
-
-        int IFlyable.FlyTo(int point)
-        {
-            throw new NotImplementedException();
+            return time;
         }
     }
 }

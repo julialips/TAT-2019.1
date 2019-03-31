@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bird.cs" />
-    <Compile Include="FlyTime.cs" />
+    <Compile Include="LengthWay.cs" />
     <Compile Include="IFlyable.cs" />
     <Compile Include="Plane.cs" />
     <Compile Include="StructPoint.cs" />

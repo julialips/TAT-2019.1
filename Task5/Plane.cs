@@ -1,42 +1,58 @@
-﻿using System;
-namespace Task5
+﻿namespace Task5
 {
+    /// <summary>
+    /// class, which have methods inherited and realized from interface
+    /// </summary>
     class Plane : IFlyable
     {
-        int lengthWay;
+        int lengthway;
         int speedFlyPlane;
-        public void FlyTo(int point)
-        {
-            Console.WriteLine("НА марс");
-            int g = point;
+        double time;
+        Point point;
 
-            // Point newPoint
+        /// <summary>
+        /// constructor of our class, that initialize start point and speed
+        /// </summary>
+        public Plane()
+        {
+            point.SetPoint(0, 0, 0);
+            speedFlyPlane = 200;
         }
 
-        public void WhoAmI()
+        /// <summary>
+        /// method for calculating distance between start and finish points
+        /// </summary>
+        /// <param name="finishpoint"> new point </param>
+        public void FlyTo(Point finishpoint)
         {
-            Console.WriteLine("я космич");
+            LengthWay calculatelength = new LengthWay();
+            calculatelength.CalculateLength(point, finishpoint);
+            point.SetPoint(finishpoint.X, finishpoint.Y, finishpoint.Z);
         }
 
-        public void GetFlyTime()
-        { //- Самолет развивает скорость +10 км / час каждые 10 км полета, начиная с 200 км / час;
-          // for (int i=10; i<lengthWay; i++)
-          // {
-            if (speedFlyPlane == 200)
-            {
-               // if (lengthWay =+  10)
-                //{
-                    speedFlyPlane += 10 / (lengthWay / 20);
-                //}
+        /// <summary>
+        /// method which return the name of object
+        /// </summary>
+        /// <returns> object's name </returns>
+        public string WhoAmI()
+        {
+            return "I am a Plane";
+        }
+
+        /// <summary>
+        /// method to determine the time of fly
+        /// </summary>
+        /// <returns> time in fly </returns>
+        public double GetFlyTime()
+        {
+           while(lengthway <= 10)
+            {       
+                lengthway -= 10;
+                speedFlyPlane += 10;
+
             }
-           // }
-
-            Console.WriteLine("времечко");
-        }
-
-        int IFlyable.FlyTo(int point)
-        {
-            throw new NotImplementedException();
+            double time = lengthway / speedFlyPlane;
+            return time;
         }
     }
 }

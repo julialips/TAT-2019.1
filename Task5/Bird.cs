@@ -2,40 +2,58 @@
 
 namespace Task5
 {
+    /// <summary>
+    /// class, which have methods inherited and realized from interface
+    /// </summary>
     class Bird : IFlyable
     {
         int speedFlyBird;
+        double lengthway;
+        Point point;
         Random random = new Random();
 
-        public void FlyTo(int point)
+        /// <summary>
+        /// constructor of our class, that initialize start point 
+        /// </summary>
+        public Bird()
         {
-            Console.WriteLine("НА ЮГ");
-            int g = point;
-
-            // Point newPoint
+            point.SetPoint(0, 0, 0);
         }
 
-        public void WhoAmI()
+        /// <summary>
+        /// method for calculating distance between start and finish points
+        /// </summary>
+        /// <param name="finishpoint"> end point </param>
+        public void FlyTo(Point finishpoint)
         {
-            Console.WriteLine("I am is a Bird");
+            LengthWay calculatelength = new LengthWay();
+            point.SetPoint(finishpoint.X, finishpoint.Y, finishpoint.Z);
+            calculatelength.CalculateLength(point, finishpoint);
         }
 
-        public void GetFlyTime()
+        /// <summary>
+        /// method witch return the name of object
+        /// </summary>
+        /// <returns> object's name </returns>
+        public string WhoAmI()
         {
-            
-            // for(int i = 0; i < 1; i++)
-            // {
+           return "I am a Bird";
+        }
+
+        /// <summary>
+        /// method to determine the time of fly
+        /// </summary>
+        /// <returns> time</returns>
+        public double GetFlyTime()
+        {
             speedFlyBird = random.Next(0,20) ;
-            Console.WriteLine ($"Speed of bird is{speedFlyBird }");
-            // }
-            FlyTime flytime = new FlyTime();
-            flytime.lenghtAndTime(speedFlyBird);
-
-        }
-
-        int IFlyable.FlyTo(int point)
-        {
-            throw new NotImplementedException();
+            if(speedFlyBird == 0)
+            {
+                point.SetPoint(0, 0, 0);
+                return 0;
+            }
+            double time = lengthway / speedFlyBird;
+            return time;
         }
     }
 }
