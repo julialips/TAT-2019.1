@@ -22,8 +22,7 @@ namespace Task5
                 bird.FlyTo(point);
                 Console.WriteLine(bird.GetFlyTime());
                 
-
-               Plane plane = new Plane();
+                Plane plane = new Plane();
                 Console.WriteLine(plane.WhoAmI());
                 plane.FlyTo(point);
                 Console.WriteLine(plane.GetFlyTime());
