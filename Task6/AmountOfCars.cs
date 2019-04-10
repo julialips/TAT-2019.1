@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task6
+﻿namespace Task6
 {
+    /// <summary>
+    /// class,inherit from interfase
+    /// </summary>
     class AmountOfCars : ICommand
     {
         HandlerCars handlercars;
 
-       AmountOfCars(HandlerCars handler)
-        {
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="handler"> object class HandlerCars </param>
+        public AmountOfCars(HandlerCars handler)
+         {
             this.handlercars = handler;
-        }
+         }
         
         /// <summary>
         /// Implemented method. 
@@ -23,7 +24,6 @@ namespace Task6
         public void Execute()
         {
             handlercars.CountAmountOfCars();
-         
         }
     }
 }

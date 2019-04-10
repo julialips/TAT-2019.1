@@ -1,24 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Task6
 {
+    /// <summary>
+    /// class,inherit from interfase
+    /// </summary>
     class AveragePriceOfCarEveryBrand : ICommand
     {
         HandlerCars handlercars;
-        AveragePriceOfCarEveryBrand(HandlerCars handler)
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="handler"></param>
+        public AveragePriceOfCarEveryBrand(HandlerCars handler)
         {
             this.handlercars = handler;
         }
 
         public void Execute()
         {
-            Console.WriteLine("Enter type :");
-            handlercars.CountAveragePriceEveryBrand(Console.ReadLine());
-           
+            try
+            {
+                Console.WriteLine("Enter type :");
+                handlercars.CountAveragePriceEveryBrand(Console.ReadLine());
+            }
+            catch(Exception)
+            {
+                Console.WriteLine("Type is not found,write again");
+            }
         }
     }
 }

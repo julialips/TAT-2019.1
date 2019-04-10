@@ -9,17 +9,15 @@ namespace Task6
     class Invoker
     {
         ICommand command;
-        AmountOfCars amountOfCars;
+
         public void SetCommand(ICommand comand)
         {
            command = comand;
-        }
-        
+        }  
 
         public void StartMethod()
         {
-            //command.Execute();
-            amountOfCars.Execute();
+            command.Execute();
         }
     }
 }

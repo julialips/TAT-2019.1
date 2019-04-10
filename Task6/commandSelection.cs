@@ -1,56 +1,57 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Task6
 {
+    /// <summary>
+    /// class whitch start methods
+    /// </summary>
     class CommandSelection
     {
-        AmountOfCars amountOfCars;
-
+        /// <summary>
+        /// method, using switch-case for choosing needed methods
+        /// </summary>
+        /// <param name="name"></param>
         public CommandSelection(string name)
         {
-
-            ICommand command;
-
+            ReaderFromXML readerFromXML = new ReaderFromXML();
             Invoker invoker = new Invoker();
-            HandlerCars handlerCars = new HandlerCars();//("@Cars.xml"/*@"C:\Users\user\sourse\repos\TAT-2019.1\Task6\Cars.xml" + name*/);
-            Console.WriteLine("Select command (1-5): \n 1.Count car types \n 2.Count all types \n 3.Average car price \n 4.Average price type \n 5.Exit");
+            HandlerCars handlerCars = new HandlerCars(@"C:\Users\user\source\repos\TAT-2019.1\Task6\" + name);
 
+            Console.WriteLine("Select command (1-5): \n 1.Count car brands \n 2.Count all cars \n " +
+                              "3.Average car price \n 4.Average price type \n 5.Clear console \n 6.Exit");
             string selection = Console.ReadLine();
-            while ((selection = Console.ReadLine().ToLower()) != "5")
+
+            while ((selection = Console.ReadLine().ToLower()) != "6")
             {
                 switch (selection)
                 {
                     case "1":
-                      //  new AmountOfCars();
-                        amountOfCars.Execute();
-
-                        //   invoker.SetCommand(amountOfCars);
-                        //  invoker.StartMethod();
-                        //  new CountBrandsOfCars();
-                        Console.WriteLine("Вы нажали 1");
+                          invoker.SetCommand(new AmountOfCars(handlerCars));
+                          invoker.StartMethod();                      
                         break;
                     case "2":
-                        Console.WriteLine("Вы нажали 2");
+                        invoker.SetCommand(new TypesOfAllBrands(handlerCars));
+                        invoker.StartMethod();
                         break;
                     case "3":
-                        Console.WriteLine("Вы нажали 3");
+                        invoker.SetCommand(new AveragePriceOfCar(handlerCars));
+                        invoker.StartMethod();
                         break;
                     case "4":
-                        Console.WriteLine("Вы нажали 4");
+                        invoker.SetCommand(new AveragePriceOfCarEveryBrand(handlerCars));
+                        invoker.StartMethod();
                         break;
                     case "5":
+                        Console.Clear();
+                        readerFromXML.Read("Cars.xml");
+                        break;
+                    case "6":
                         break;
                     default:
-                        Console.WriteLine("Chose number only from 1 to 5");
+                        Console.WriteLine("Chose number only from 1 to 6");
                         break;
                 }
-              
             }
-
         }
     }
 }

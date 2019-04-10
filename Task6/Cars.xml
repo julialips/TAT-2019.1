@@ -6,6 +6,12 @@
     <price>18900</price>
   </car>
   <car>
+    <brand>porsche</brand>
+    <model>ax</model>
+    <number>8</number>
+    <price>23000</price>
+  </car>
+  <car>
     <brand>nissan</brand>
     <model>almera</model>
     <number>5</number>
@@ -16,11 +22,5 @@
     <model>panamerax</model>
     <number>2</number>
     <price>28000</price>
-  </car>
-  <car>
-    <brand>porsche</brand>
-    <model>ax</model>
-    <number>8</number>
-    <price>23000</price>
   </car>
 </cars>
