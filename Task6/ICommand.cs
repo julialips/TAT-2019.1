@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task6
+﻿namespace Task6
 {
+    /// <summary>
+    /// interface whith 1 method,which redefined 
+    /// </summary>
     public interface ICommand
     {
          void Execute();

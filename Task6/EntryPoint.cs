@@ -10,7 +10,7 @@ namespace Task6
         /// <summary>
         /// Entry poin of program
         /// </summary>
-        /// <param name="args"> number of command </param>
+        /// <param name="args"> name of xml file </param>
         static void Main(string[] args)
         {
             try

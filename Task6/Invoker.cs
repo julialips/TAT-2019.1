@@ -1,20 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Task6
+﻿namespace Task6
 {
+    /// <summary>
+    /// class contains 2 methods, working with command.User choose command from switch.
+    /// </summary>
     class Invoker
     {
         ICommand command;
 
+        /// <summary>
+        /// method for setting command
+        /// </summary>
+        /// <param name="comand"></param>
         public void SetCommand(ICommand comand)
         {
            command = comand;
         }  
 
+        /// <summary>
+        /// method define which method will start
+        /// </summary>
         public void StartMethod()
         {
             command.Execute();

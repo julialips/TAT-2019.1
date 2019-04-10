@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+
 namespace Task6
 {
     /// <summary>
@@ -18,6 +18,11 @@ namespace Task6
             this.handlercars = handler;
         }
 
+        /// <summary>
+        /// Implemented method, which start other method to calculate 
+        /// </summary>
+        /// <param name="type"> it is a car brand </param>
+        /// <returns> void </returns>
         public void Execute()
         {
             try

@@ -17,7 +17,7 @@
         }
 
         /// <summary>
-        /// 
+        /// Implemented method, which start other method to calculate 
         /// </summary>
         public void Execute()
         {

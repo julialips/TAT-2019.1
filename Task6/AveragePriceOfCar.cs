@@ -17,7 +17,7 @@
         }
 
         /// <summary>
-        /// Implemented method. 
+        /// Implemented method, which start other method to calculate 
         /// </summary>
         /// <param name="type"></param>
         /// <returns></returns>

@@ -10,7 +10,6 @@ namespace Task6
     public class HandlerCars
     {
         XmlDocument xDoc = new XmlDocument();
-        XmlNode xnode;
 
         /// <summary>
         /// constructor our class,which read from xml
@@ -30,8 +29,7 @@ namespace Task6
         /// <summary>
         /// method for counting amount of brands
         /// </summary>
-        /// <returns></returns>
-        public int CountBrandsOfCars()
+        public void CountBrandsOfCars()
         {
             int number = 0;
             int averageNumber = 0;
@@ -49,14 +47,12 @@ namespace Task6
                 }
             }
             Console.WriteLine("Amount all cars : " + averageNumber);
-            return averageNumber;
         }
 
         /// <summary>
         /// method for counting amount of cars
         /// </summary>
-        /// <returns></returns>
-        public int CountAmountOfCars()
+        public void CountAmountOfCars()
         {
             List<string> differentBrands = new List<string>();
             XmlElement xRoot = xDoc.DocumentElement;
@@ -77,7 +73,6 @@ namespace Task6
                 }
             }
             Console.WriteLine("Brands : " + differentBrands.Count);
-            return differentBrands.Count;
         }
 
         /// <summary>
@@ -86,12 +81,12 @@ namespace Task6
         /// <returns></returns>
         public double CountAveragePriceOfCars()
         {
-            double prise = 0;
             int countModels = 0;
+            double prise = 0;
+            double totalPrise = 0;
             double averagePrise = 0;
             XmlElement xRoot = xDoc.DocumentElement;
-            double totalPrise = 0;
-
+        
             foreach (XmlNode xnode in xRoot)
             {
                 foreach (XmlNode childnode in xnode.ChildNodes)
@@ -112,8 +107,7 @@ namespace Task6
         /// <summary>
         /// method counting avegare price of car by type
         /// </summary>
-        /// <param name="typebrand"> type of car </param>
-        /// <returns> price </returns>
+        /// <param name="typebrand">type of car </param>
         public void CountAveragePriceEveryBrand(string typebrand)
         {
             XmlElement xRoot = xDoc.DocumentElement;
