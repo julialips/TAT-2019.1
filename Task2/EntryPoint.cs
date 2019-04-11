@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Task2
 {
@@ -21,7 +20,9 @@ namespace Task2
             try
             {
                 if (args.Length == 0)
-                throw new FormatException();
+                {
+                    throw new FormatException();
+                }
 
                 for (int i = 0; i < args.Length; i++)
                 {
@@ -33,13 +34,11 @@ namespace Task2
                 Console.WriteLine(converter.Convert(args[0]));
                 return 0;
             }
-
             catch (FormatException)
             {
                 Console.WriteLine("The entered string is empty , try again!");
                 return 1;
             }
-
             catch (Exception)
             {
                 Console.WriteLine("Oops,something went wrong,try again!");
