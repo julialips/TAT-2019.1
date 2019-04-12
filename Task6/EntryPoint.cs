@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Task6
 {
@@ -25,6 +26,11 @@ namespace Task6
                 CarsDataBase carsDataBase;
                 carsDataBase = CarsDataBase.GetInstance(); 
                 
+                List<HandlerCars> cars = new List<HandlerCars>()
+                {
+                    new HandlerCars(CarsDataBase.GetCars(args[(int)selection.CarType.Passenger])),
+                    new HandlerCars(CarsDataBase.GetCars(args[(int)CarType.Truck]))
+                };
 
                 CommandSelection commandSelection = new CommandSelection(args[0],args[1]);
             }
