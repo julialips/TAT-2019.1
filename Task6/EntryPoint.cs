@@ -28,7 +28,7 @@ namespace Task6
                 
                 List<HandlerCars> cars = new List<HandlerCars>()
                 {
-                    new HandlerCars(CarsDataBase.GetCars(args[(int)selection.CarType.Passenger])),
+                    new HandlerCars(CarsDataBase.GetCars(args[(int)CarType.Passenger])),
                     new HandlerCars(CarsDataBase.GetCars(args[(int)CarType.Truck]))
                 };
 
