@@ -67,7 +67,7 @@ namespace Task6
         /// <summary>
         /// structure of car types
         /// </summary>
-        enum CarType
+        public enum CarType
         {
             Passenger,
             Truck
