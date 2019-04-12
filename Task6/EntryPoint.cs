@@ -25,12 +25,12 @@ namespace Task6
 
                 CarsDataBase carsDataBase;
                 carsDataBase = CarsDataBase.GetInstance();
-                CommandSelection selection;
+               // CommandSelection selection;
 
                 List<HandlerCars> cars = new List<HandlerCars>()
                 {
-                    new HandlerCars(CarsDataBase.GetCars(args[(int)selection.CarType.Passenger])),
-                    new HandlerCars(CarsDataBase.GetCars(args[(int)CarType.Truck]))
+                    new HandlerCars(CarsDataBase.GetCars(args[(int)Struct.Passenger])),
+                    new HandlerCars(CarsDataBase.GetCars(args[(int)Struct.Truck]))
                 };
 
                 CommandSelection commandSelection = new CommandSelection(args[0],args[1]);
