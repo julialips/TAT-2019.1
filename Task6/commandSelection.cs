@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Task6
 {
@@ -52,8 +52,7 @@ namespace Task6
                     case "6":
                         invoker = null;
                         continue;
-                    //  break;
-                    case "7":
+                    сase "7":
                         break;
                     default:
                         Console.WriteLine("Chose number only from 1 to 6");
@@ -67,11 +66,12 @@ namespace Task6
         /// <summary>
         /// structure of car types
         /// </summary>
-        enum CarType
+        public enum CarType
         {
             Passenger,
             Truck
         }
+        
         /// <summary>
         /// Methosd returns type of car 
         /// </summary>
