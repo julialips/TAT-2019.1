@@ -65,6 +65,14 @@ namespace Task6
         }
 
         /// <summary>
+        /// structure of car types
+        /// </summary>
+        enum CarType
+        {
+            Passenger,
+            Truck
+        }
+        /// <summary>
         /// Methosd returns type of car 
         /// </summary>
         /// <returns>Int type of car</returns>
@@ -74,7 +82,7 @@ namespace Task6
 
             for (bool entry = true; entry;)
             {
-                Console.WriteLine("Choose type of car (1-2)):\n" + $" 1. {CarTypes.Passenger}\n" + $"2. {CarTypes.Truck}");
+                Console.WriteLine("Choose type of car (1-2)):\n" + $" 1. {CarType.Passenger}\n" + $"2. {CarType.Truck}");
 
                 if (!int.TryParse(Console.ReadLine(), out typeOfCar))
                 {
