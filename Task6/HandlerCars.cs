@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 
 namespace Task6
@@ -7,72 +8,48 @@ namespace Task6
     /// <summary>
     /// class,contains methods  and reading text from xml file
     /// </summary>
-    public class HandlerCars
+    class HandlerCars
     {
+        public IEnumerable<Car> Cars { get; private set; }
         XmlDocument xDoc = new XmlDocument();
+        XmlDocument xDoc2 = new XmlDocument();
 
+        
+         public HandlerCars(IEnumerable<Car> cars)
+         {
+             Cars = cars;    
+         }
+         
         /// <summary>
         /// constructor our class,which read from xml
         /// </summary>
-        public HandlerCars(string filename)
+        public HandlerCars(string filename, string filename2 )
         {
             try
             {
                 xDoc.Load(filename);
+                xDoc2.Load(filename2);
             }
             catch (System.IO.FileNotFoundException)
             {
                 Console.WriteLine(" XML file is not found.");
             }
         }
-
+        
         /// <summary>
         /// method for counting amount of brands
         /// </summary>
-        public void CountBrandsOfCars()
+        public int   CountBrandsOfCars()
         {
-            int number = 0;
-            int averageNumber = 0;
-            XmlElement xRoot = xDoc.DocumentElement;
-
-            foreach (XmlNode xnode in xRoot)
-            {
-                foreach (XmlNode childnode in xnode.ChildNodes)
-                {
-                    if (childnode.Name == "number")
-                    {
-                        number = Int32.Parse(childnode.InnerText);
-                        averageNumber += (Int32.Parse(childnode.InnerText));
-                    }
-                }
-            }
-            Console.WriteLine("Amount all cars : " + averageNumber);
+            return Cars.GroupBy(car => car.Brand).Count();
         }
 
         /// <summary>
         /// method for counting amount of cars
         /// </summary>
-        public void CountAmountOfCars()
+        public int CountAmountOfCars()
         {
-            List<string> differentBrands = new List<string>();
-            XmlElement xRoot = xDoc.DocumentElement;
-
-            foreach (XmlNode xnode in xRoot)
-            {
-                foreach (XmlNode childnode in xnode.ChildNodes)
-                {
-                    if (childnode.Name == "brand")
-                    {
-                        if (!differentBrands.Contains(childnode.InnerText))
-                        {
-                            differentBrands.Add(childnode.InnerText);
-                            Console.WriteLine(childnode.InnerText);
-                        }
-                    }
-
-                }
-            }
-            Console.WriteLine("Brands : " + differentBrands.Count);
+            return Cars.Select(car => car.Number).Sum();
         }
 
         /// <summary>
@@ -81,63 +58,22 @@ namespace Task6
         /// <returns></returns>
         public double CountAveragePriceOfCars()
         {
-            int countModels = 0;
-            double prise = 0;
-            double totalPrise = 0;
-            double averagePrise = 0;
-            XmlElement xRoot = xDoc.DocumentElement;
-        
-            foreach (XmlNode xnode in xRoot)
-            {
-                foreach (XmlNode childnode in xnode.ChildNodes)
-                {
-                    if (childnode.Name == "price")
-                    {
-                        prise = Double.Parse(childnode.InnerText);
-                        averagePrise += (Double.Parse(childnode.InnerText));
-                        countModels++;
-                    }
-                }
-                totalPrise = averagePrise / countModels;
-            }
-            Console.WriteLine("Average price of cars is " + totalPrise);
-            return totalPrise;
+            return Cars.Select(car => car.Price).Average();
         }
 
         /// <summary>
         /// method counting avegare price of car by type
         /// </summary>
         /// <param name="typebrand">type of car </param>
-        public void CountAveragePriceEveryBrand(string typebrand)
+        public double CountAveragePriceEveryBrand(string typebrand)
         {
-            XmlElement xRoot = xDoc.DocumentElement;
-            double price = 0;
-            int count = 0;
-
-            foreach (XmlNode xnode in xRoot)
+            if (Cars.Select(car => car.Brand).Contains(typebrand.ToLower()))
             {
-                foreach (XmlNode childnode in xnode.ChildNodes)
-                {
-                    if (childnode.Name == "brand" && childnode.InnerText == typebrand)
-                    {
-                        foreach (XmlNode child in xnode.ChildNodes)
-                        {
-                            if (child.Name == "price")
-                            {
-                                price += Double.Parse(child.InnerText);
-                                count++;
-                            }                        
-                        }
-                    }
-                }
-            }
-            if (count > 0)
-            {
-                Console.WriteLine("Average price " + typebrand + " = " + price / count);
+                return Cars.Where(car => car.Brand == typebrand.ToLower()).Select(car => car.Price).Average();
             }
             else
             {
-                Console.WriteLine("Salon have not car this brand " + typebrand);
+                throw new Exception("Salon have not car this brand ");
             }
         }
     }

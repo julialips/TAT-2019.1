@@ -45,6 +45,8 @@
     <Compile Include="AmountOfCars.cs" />
     <Compile Include="AveragePriceOfCar.cs" />
     <Compile Include="AveragePriceOfCarEveryBrand.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="CarsDataBase.cs" />
     <Compile Include="CommandSelection.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="EntryPoint.cs" />
