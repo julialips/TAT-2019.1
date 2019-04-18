@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Task2
 {
@@ -22,9 +21,9 @@ namespace Task2
             {
                 if (args.Length == 0)
                 {
-                throw new FormatException();
+                    throw new FormatException();
                 }
-                
+
                 for (int i = 0; i < args.Length; i++)
                 {
                     Console.Write(args[i]);

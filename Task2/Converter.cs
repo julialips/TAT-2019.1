@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Task2
 {
@@ -39,7 +38,7 @@ namespace Task2
             dictСonsonants.Add('ж', 'ш');
             dictСonsonants.Add('г', 'к');
         }
-        
+
         /// <summary>
         /// universal method for replasing simbol char
         /// </summary>
@@ -55,7 +54,7 @@ namespace Task2
             str2 = str2.Replace(str2[0], replaceLetter);
             return str1 + str2 + str3;
         }
-        
+
         /// <summary>
         /// universal method for replasing simbol type string
         /// </summary>
@@ -71,7 +70,7 @@ namespace Task2
             str2 = str2.Replace(str2[0].ToString(), replaceLetter);
             return str1 + str2 + str3;
         }
-        
+
         /// <summary>
         /// method, witch convert first soft vowels 
         /// and two vowel in pair of 2 soft vowels
@@ -85,7 +84,7 @@ namespace Task2
             }
             return word;
         }
-        
+
         /// <summary>
         /// method for converting unstress O to A
         /// </summary>
@@ -97,7 +96,7 @@ namespace Task2
             word = word.Replace("+", string.Empty);
             return word;
         }
-        
+
         /// <summary>
         /// this method for softing consonants before vowels by '
         /// </summary>
@@ -115,7 +114,7 @@ namespace Task2
             }
             return word;
         }
-        
+
         /// <summary>
         /// method ,witch convert word after hard vowels before soft vowels 
         /// </summary>
@@ -131,7 +130,7 @@ namespace Task2
             }
             return word;
         }
-        
+
         /// <summary>
         /// method ,witch convert word after Ь,Ъ letters 
         /// </summary>
@@ -148,7 +147,7 @@ namespace Task2
             }
             return word;
         }
-        
+
         /// <summary>
         /// method, witch deafen voice consonant
         /// </summary>
@@ -164,7 +163,7 @@ namespace Task2
             }
             return word;
         }
-        
+
         /// <summary>
         /// method for converting hard and soft signs to '
         /// </summary>
@@ -177,7 +176,7 @@ namespace Task2
             }
             return word;
         }
-        
+
         /// <summary>
         /// one big method, consist al little methods for converting
         /// </summary>
