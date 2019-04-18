@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Task2
 {
     /// <summary>
     /// Class , with contains methods to convert input word to phonemes
     /// </summary>
-    class Converter
+    public class Converter
     {
         private const string YOT_LETTER = "й";
         private const string APOSTROPHE_SIGN = "'";
@@ -17,7 +18,7 @@ namespace Task2
         private readonly List<char> hardVowels = new List<char> { 'а', 'о', 'у', 'ы', 'э' };
         private readonly List<char> softConsonants = new List<char> { 'б', 'в', 'г', 'д', 'з', 'к', 'л', 'м', 'н',
             'п', 'р', 'с', 'т', 'ф', 'х' };
-        private readonly List<char> hardSoftSigns = new List<char> { 'ь', 'ъ' };
+        private readonly List<char> hardSoftSigns = new List<char> { 'ь', 'ъ','+' };
         private readonly List<char> voicelessСonsonants = new List<char> { 'б', 'в', 'д', 'з', 'ж', 'г' };
         private readonly Dictionary<char, char> dictVowels = new Dictionary<char, char>();
         private readonly Dictionary<char, char> dictСonsonants = new Dictionary<char, char>();
@@ -178,13 +179,88 @@ namespace Task2
         }
 
         /// <summary>
-        /// one big method, consist al little methods for converting
+        /// method which checking validation our word
         /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
-        public string Convert(string word)
+        /// <returns> word or exeption </returns>
+        private string Validation()
+        {
+            string invalidSimbols = ".,#@!&*%$1234567890/-";
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (invalidSimbols.Contains(word.Substring(i, 1)))
+                {
+                    throw new FormatException();
+                }
+            }
+            return word;
+        }
+
+        /// <summary>
+        /// method, which check english simbols , and if found, thow exception
+        /// </summary>
+        /// <returns> word </returns>
+        private string ValidationEnglishSimbols()
+        {    
+            string english = "abcdifjgklmnprstuyfhsqweozxv";
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (english.Contains(word.Substring(i, 1)))
+                {
+                    throw new FormatException();
+                }
+            }
+            return word;
+        }
+
+        /// <summary>
+        /// method ,which throw exeption,when it finds plus(stress) after consonants
+        /// </summary>
+        /// <returns> word </returns>
+        private string CheckPlusAfterConsonants()
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (softConsonants.Contains(word[i]) && hardSoftSigns.Contains(word[i + 1]))
+                {
+                    throw new FormatException();
+                }
+            }
+           return word;
+        }
+
+        /// <summary>
+        /// Method, which check two or more stress and throw new exception
+        /// </summary>
+        /// <returns> word </returns>
+        private string CheckTwoPlus()
+        {
+            string plus = "++";
+            int count = 0;
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (plus.Contains(word.Substring(i, 1)))
+                {
+                    count++;
+                }
+                if (count > 1)
+                {
+                    throw new FormatException();
+                }
+            }
+           return word;
+        }
+            /// <summary>
+            /// one big method, consist al little methods for converting
+            /// </summary>
+            /// <param name="word"></param>
+            /// <returns></returns>
+            public string Convert(string word)
         {
             this.word = word;
+            Validation();
+            ValidationEnglishSimbols();
+            CheckPlusAfterConsonants();
+            CheckTwoPlus();
             FirstLetter();
             ConvertOtoA();
             Softing();

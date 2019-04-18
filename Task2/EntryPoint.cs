@@ -36,7 +36,7 @@ namespace Task2
             }
             catch (FormatException)
             {
-                Console.WriteLine("The entered string is empty , try again!");
+                Console.WriteLine("The entered string is empty or not valid,please, try again!");
                 return 1;
             }
             catch (Exception)
