@@ -22,7 +22,7 @@ namespace Task2
         private readonly Dictionary<char, char> dictVowels = new Dictionary<char, char>();
         private readonly Dictionary<char, char> dictСonsonants = new Dictionary<char, char>();
 
-        // <summary>
+        /// <summary>
         /// method,which add simbols in dictionary 
         /// </summary>
         public Converter()
@@ -61,7 +61,7 @@ namespace Task2
         /// <param name="str"> string witch we cut </param>
         /// <param name="index"> from this index</param>
         /// <param name="replaceLetter"> letter on witch replace</param>
-        /// <returns></returns>
+        /// <returns></returns>        
         private string ReplaceOneLetter(string str, int index, string replaceLetter)
         {
             var str1 = str.Substring(0, index);
