@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Task6
 {
-        enum Struct
+      /*  enum Struct
         {
             Passenger,
             Truck
-        }
+        }*/
     }
 
