@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using Task2;
+
 namespace Task2.Tests
 {
     [TestFixture]
@@ -12,6 +12,8 @@ namespace Task2.Tests
         [TestCase("сде+лать", "зд'элат'")]
         [TestCase("я", "йа")]
         [TestCase("я+", "йа")]
+        [TestCase("прст", "прст")]
+        [TestCase("аа", "аа")]
         public void TestMethod1(string word, string expected)
         {
             var conv = new Converter();
@@ -31,7 +33,7 @@ namespace Task2.Tests
         [TestCase("молок+о")]
         [TestCase("+молоко")]
         [TestCase("мо+локо+")]
-        public void TestIncorrectWord(string word)
+        public void TestIncorrectPressWord(string word)
         {
             var conv = new Converter();
             Assert.Throws<FormatException>
@@ -59,7 +61,7 @@ namespace Task2.Tests
 
         [TestCase("*-1092")]
         [TestCase("молоко+*-1672")]
-        public void TestInvalidSimbols(string word)
+        public void TestInvalidSimbolsFormatException(string word)
         {
             var conv = new Converter();
             Assert.Throws<FormatException>
