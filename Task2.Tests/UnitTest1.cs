@@ -48,7 +48,7 @@ namespace Task2.Tests
         }
 
         [TestCase("юля вика")]
-        public void TesrTwoWords(string word)
+        public void TestTwoWords(string word)
         {
             var conv = new Converter();
             Assert.Throws<FormatException>
@@ -57,7 +57,7 @@ namespace Task2.Tests
             );
         }
 
-        [TestCase("*-1672")]
+        [TestCase("*-1092")]
         [TestCase("молоко+*-1672")]
         public void TestInvalidSimbols(string word)
         {

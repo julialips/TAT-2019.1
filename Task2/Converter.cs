@@ -18,10 +18,14 @@ namespace Task2
         private readonly List<char> hardVowels = new List<char> { 'а', 'о', 'у', 'ы', 'э' };
         private readonly List<char> softConsonants = new List<char> { 'б', 'в', 'г', 'д', 'з', 'к', 'л', 'м', 'н',
             'п', 'р', 'с', 'т', 'ф', 'х' };
-        private readonly List<char> hardSoftSigns = new List<char> { 'ь', 'ъ','+' };
+        private readonly List<char> hardSoftSigns = new List<char> { 'ь', 'ъ' };
+        private readonly List<char> stress = new List<char> { '+' };
         private readonly List<char> voicelessСonsonants = new List<char> { 'б', 'в', 'д', 'з', 'ж', 'г' };
+        private readonly List<char> deafСonsonants = new List<char> { 'с', 'к', 'п', 'ф', 'т', 'ш' };
+       
         private readonly Dictionary<char, char> dictVowels = new Dictionary<char, char>();
         private readonly Dictionary<char, char> dictСonsonants = new Dictionary<char, char>();
+        private readonly Dictionary<char, char> dictСonsonantsToVoicing = new Dictionary<char, char>();
 
         /// <summary>
         /// method,which add simbols in dictionary 
@@ -38,6 +42,44 @@ namespace Task2
             dictСonsonants.Add('з', 'с');
             dictСonsonants.Add('ж', 'ш');
             dictСonsonants.Add('г', 'к');
+            dictСonsonantsToVoicing.Add('п', 'б');
+            dictСonsonantsToVoicing.Add('ф', 'в');
+            dictСonsonantsToVoicing.Add('т', 'д');
+            dictСonsonantsToVoicing.Add('с', 'з');
+            dictСonsonantsToVoicing.Add('ш', 'ж');
+            dictСonsonantsToVoicing.Add('к', 'г');
+        }
+
+        /// <summary>
+        /// method, which voicing deaf consonants before voiceless consonants
+        /// </summary>
+        /// <returns> word </returns>
+        private string VoicingDeafConsonantsBeforeVoicelessConsonants()
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (deafСonsonants.Contains(word[i]) && voicelessСonsonants.Contains(word[i + 1]))
+                {
+                        word = ReplaceOneLetter(word, i, dictСonsonantsToVoicing[word[i]]);
+                }
+            }
+            return word;
+        }
+
+            /// <summary>
+            /// method, witch deafen voice consonant
+            /// </summary>
+            /// <returns></returns>
+            private string Voicing()
+        {
+            for (int i = 1; i < word.Length; i++)
+            {
+                if (voicelessСonsonants.Contains(word[i]) && hardVowels.Contains(word[i - 1]))
+                {
+                    word = ReplaceOneLetter(word, i, dictСonsonants[word[i]]);
+                }
+            }
+            return word;
         }
 
         /// <summary>
@@ -150,22 +192,6 @@ namespace Task2
         }
 
         /// <summary>
-        /// method, witch deafen voice consonant
-        /// </summary>
-        /// <returns></returns>
-        private string Voicing()
-        {
-            for (int i = 1; i < word.Length; i++)
-            {
-                if (voicelessСonsonants.Contains(word[i]) && hardVowels.Contains(word[i - 1]))
-                {
-                    word = ReplaceOneLetter(word, i, dictСonsonants[word[i]]);
-                }
-            }
-            return word;
-        }
-
-        /// <summary>
         /// method for converting hard and soft signs to '
         /// </summary>
         /// <returns></returns>
@@ -219,8 +245,8 @@ namespace Task2
         private string CheckPlusAfterConsonants()
         {
             for (int i = 0; i < word.Length; i++)
-            {
-                if (softConsonants.Contains(word[i]) && hardSoftSigns.Contains(word[i + 1]))
+            { 
+                if (softConsonants.Contains(word[i]) && stress.Contains(word[i + 1]))
                 {
                     throw new FormatException();
                 }
@@ -261,6 +287,7 @@ namespace Task2
             ValidationEnglishSimbols();
             CheckPlusAfterConsonants();
             CheckTwoPlus();
+            VoicingDeafConsonantsBeforeVoicelessConsonants();
             FirstLetter();
             ConvertOtoA();
             Softing();
