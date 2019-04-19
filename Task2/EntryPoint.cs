@@ -19,16 +19,13 @@ namespace Task2
         {
             try
             {
-                if (args.Length == 0)
+                if (args[0].Length == 0)
                 {
                     throw new FormatException();
                 }
 
-                for (int i = 0; i < args.Length; i++)
-                {
-                    Console.Write(args[i]);
-                    Console.Write(" >>> ");
-                }
+                Console.Write(args[0]);
+                Console.Write(" >>> ");
 
                 var converter = new Converter();
                 Console.WriteLine(converter.Convert(args[0]));

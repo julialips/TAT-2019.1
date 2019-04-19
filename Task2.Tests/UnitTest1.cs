@@ -10,7 +10,8 @@ namespace Task2.Tests
         [TestCase("яйцо+", "йайцо")]
         [TestCase("ме+сто", "м'эста")]
         [TestCase("сде+лать", "зд'элат'")]
-        [TestCase("МОЛОКО+", "МАЛАКО")]
+        [TestCase("я", "йа")]
+        [TestCase("я+", "йа")]
         public void TestMethod1(string word, string expected)
         {
             var conv = new Converter();
@@ -18,8 +19,19 @@ namespace Task2.Tests
             Assert.AreEqual(expected,actual);
         }
 
+        [TestCase("МОЛОКО+","МАЛАКО")]
+        [TestCase("мОлОКо+","мАлАКо")]
+        public void BigLetters(string word, string expected)
+        {
+            var conv = new Converter();
+            var actual = conv.Convert(word);
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestCase("молок+о")]
-        public void TestStressAfterConsonantsBeforeVowels(string word)
+        [TestCase("+молоко")]
+        [TestCase("мо+локо+")]
+        public void TestIncorrectWord(string word)
         {
             var conv = new Converter();
             Assert.Throws<FormatException>
@@ -28,33 +40,21 @@ namespace Task2.Tests
             );
         }
 
-        [TestCase("мо+локо+")]
-        public void TestTwoStress(string word)
-        {
-            var conv = new Converter();
-            Assert.Throws<FormatException>
-            (
-                () => conv.Convert(word)
-            );
-        }
         [TestCase(null)]
         public void TestNullString(string word)
         {
-            var conv = new Converter();
-            Assert.Throws<FormatException>
+            Assert.Throws<Exception>
             (
-                () => conv.Convert(word)
+                () => new Converter()
             );
         }
 
-        [TestCase("юля вика")]
-        public void TestTwoWords(string word)
+        [TestCase("юля вика","йул'a")]
+        public void TestTwoWords(string word, string expected)
         {
             var conv = new Converter();
-            Assert.Throws<FormatException>
-            (
-                () => conv.Convert(word)
-            );
+            var actual = conv.Convert(word);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestCase("*-1092")]
@@ -79,7 +79,5 @@ namespace Task2.Tests
                 () => conv.Convert(simbol)
             );
         }
-        //тест на два ударения
-
     }
 }
