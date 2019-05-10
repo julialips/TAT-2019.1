@@ -5,19 +5,24 @@ using OpenQA.Selenium.Support.UI;
 
 namespace Task2
 {
+    /// <summary>
+    /// Class,for 
+    /// </summary>
     class CheckUnreadMailInGmail
     {
         IWebDriver Driver { get; }
         IWebElement IncomingButton { get; set; }
         IWebElement SelectionUnreadButton { get; set; }
-
         IWebElement UnreadButton { get; set; }
         IWebElement EnterButton { get; set; }
         IWebElement UnreadMessage { get; set; }
-
         WebDriverWait Wait { get; }
         Locators.ReaderGmailLocators Locator { get; }
 
+        /// <summary>
+        /// Constructor our class
+        /// </summary>
+        /// <param name="driver"></param>
         public CheckUnreadMailInGmail(IWebDriver driver)
         {
             this.Driver = driver;
@@ -25,6 +30,9 @@ namespace Task2
             this.Wait = new WebDriverWait(Driver, TimeSpan.FromMinutes(2));
         }
 
+        /// <summary>
+        /// Method , which checkking unread messages, during to searching needed buttons
+        /// </summary>
         public void CheckUnreadMail()
         {
             Wait.Until(t => Driver.FindElements(By.XPath(Locator.IncomingButtonLocator)).Any());
@@ -35,11 +43,9 @@ namespace Task2
             SelectionUnreadButton = Driver.FindElement(By.XPath(Locator.MoreopportunityButtonLocator));
             SelectionUnreadButton.Click();
 
-
-            Wait.Until(t => Driver.FindElements(By.XPath(Locator.UnreadButtonLocator)).Any());//зашли в непрочитанные сообщения
+            Wait.Until(t => Driver.FindElements(By.XPath(Locator.UnreadButtonLocator)).Any());
             UnreadButton = Driver.FindElement(By.XPath(Locator.UnreadButtonLocator));
             UnreadButton.Click();
- 
         }     
     }
 }

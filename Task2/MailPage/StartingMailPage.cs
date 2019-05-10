@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
 namespace Task2
 {
-     class StartingMailPage
+    /// <summary>
+    /// Class which have methods for start page and enter in mail
+    /// </summary>
+    class StartingMailPage
     {
         IWebDriver Driver { get; }
         IWebElement Login { get; set; }
@@ -17,6 +19,10 @@ namespace Task2
         WebDriverWait Wait { get; }
         Locators.LoginMailLocators Locator { get; }
 
+        /// <summary>
+        /// Constructor of our class 
+        /// </summary>
+        /// <param name="driver"></param>
         public StartingMailPage(IWebDriver driver)
         {
             this.Driver = driver;
@@ -24,12 +30,19 @@ namespace Task2
             this.Wait = new WebDriverWait(Driver, TimeSpan.FromMinutes(2));
         }
 
+        /// <summary>
+        /// Method,which navigate to mail.ru
+        /// </summary>
         public void StartPage()
         {
-            Driver.Navigate().GoToUrl(Locator.PageLocator);
-           
+            Driver.Navigate().GoToUrl(Locator.PageLocator);   
         }
        
+        /// <summary>
+        /// Method , to enter in account
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
         public void EnterInMail(string login,string password)
         {
             Wait.Until(t => Driver.FindElements(By.XPath(Locator.EnterLoginLocator)).Any());
