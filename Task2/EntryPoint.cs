@@ -1,5 +1,9 @@
 ﻿using System;
 
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using Task2.GmailPage;
+
 namespace Task2
 {
     /// <summary>
@@ -15,35 +19,21 @@ namespace Task2
         /// <returns 0>Good start of program</returns>
         /// <returns 1>Empty string</returns> 
         /// <returns 2>Something went wrong</returns>
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
-            try
-            {
-                if (args.Length == 0)
-                {
-                    throw new FormatException();
-                }
+            IWebDriver webDriver = new ChromeDriver();
+            StartingMailPage startpage = new StartingMailPage(webDriver);
+            startpage.StartPage();
+            startpage.EnterInMail("alekseeva.katya98", "itisapassword");
 
-                for (int i = 0; i < args.Length; i++)
-                {
-                    Console.Write(args[i]);
-                    Console.Write(" >>> ");
-                }
+            Message message = new Message(webDriver);
+            message.WriteMessage("lipskaya.julia.98@gmail.com", "katya");
 
-                var converter = new Converter();
-                Console.WriteLine(converter.Convert(args[0]));
-                return 0;
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("The entered string is empty , try again!");
-                return 1;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Oops,something went wrong,try again!");
-                return 2;
-            }
+            CheckUnreadMailInGmail reader = new CheckUnreadMailInGmail(webDriver);
+            reader.CheckUnreadMail();
+
+            ReaderMessageInGmail gmail = new ReaderMessageInGmail(webDriver);
+            gmail.ReadingMessage();
         }
     }
 }
