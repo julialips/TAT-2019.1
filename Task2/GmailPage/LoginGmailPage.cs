@@ -7,8 +7,6 @@ namespace Task2
 {
     class LoginGmailPage
     {
-        class StartBrowser
-        {
             IWebDriver Driver { get; }
             IWebElement Login { get; set; }
             IWebElement Password { get; set; }
@@ -16,10 +14,11 @@ namespace Task2
             IWebElement Writing { get; set; }
             IWebElement  NextAfterLogin { get; set; }
             IWebElement NextAfterPassword { get; set; }
+
             WebDriverWait Wait { get; }
             Locators.LoginGmailLocators Locator { get; }
 
-            public StartBrowser(IWebDriver driver)
+            public LoginGmailPage(IWebDriver driver)
             {
                 this.Driver = driver;
                 this.Locator = new Locators.LoginGmailLocators();
@@ -32,7 +31,7 @@ namespace Task2
 
             }
 
-            public void EnterInMail(string login, string password)
+            public void EnterInGmail(string login, string password)
             {
                 Wait.Until(t => Driver.FindElements(By.XPath(Locator.EnterLoginLocator)).Any());
                 Login = Driver.FindElement(By.XPath(Locator.EnterLoginLocator));
@@ -56,9 +55,6 @@ namespace Task2
                 Wait.Until(t => Driver.FindElements(By.XPath(Locator.EnterButtonLocator)).Any());
                 EnterButton = Driver.FindElement(By.XPath(Locator.EnterButtonLocator));
                 EnterButton.Click();
-   
-            }
-
-        }
+              }
     }
 }

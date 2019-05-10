@@ -25,7 +25,7 @@ namespace Task2.GmailPage
         {
             Wait.Until(t => Driver.FindElements(By.XPath(Locator.IncomingMailLocator)).Any());
             UnreadMessage = Driver.FindElement(By.XPath(Locator.IncomingMailLocator));
-            UnreadMessage.Click();//заходим в само сообщение
+            UnreadMessage.Click();
 
         }
 

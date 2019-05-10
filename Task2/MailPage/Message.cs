@@ -32,9 +32,10 @@ namespace Task2
             To = Driver.FindElement(By.XPath(Locator.AdressToLocator));
             To.SendKeys(wheresend);
 
-            Wait.Until(t => Driver.FindElements(By.XPath(Locator.MessageBoxLocator)).Any());
-            TextOfMessage = Driver.FindElement(By.XPath(Locator.MessageBoxLocator));
-            TextOfMessage.SendKeys(text);
+           // Wait.Until(t => Driver.FindElements(By.XPath(Locator.MessageBoxLocator)).Any());
+            //TextOfMessage = Driver.FindElement(By.XPath(Locator.MessageBoxLocator));
+            //TextOfMessage.Clear();
+            //TextOfMessage.SendKeys(text);
 
             Wait.Until(t => Driver.FindElements(By.XPath(Locator.SendButtonLocator)).Any());
             SendButton = Driver.FindElement(By.XPath(Locator.SendButtonLocator));
