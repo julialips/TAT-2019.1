@@ -66,7 +66,7 @@
     <Compile Include="MailPage\StartingMailPage.cs" />
     <Compile Include="GmailPage\CheckUnreadMailInGmail.cs" />
     <Compile Include="MailPage\ReadingAndGettingMessageFromGmail.cs" />
-    <Compile Include="Tests\TestBrowsers.cs" />
+    <Compile Include="Tests\TestLoginPassword.cs" />
     <Compile Include="GmailPage\TextMessageToMail.cs" />
   </ItemGroup>
   <ItemGroup>

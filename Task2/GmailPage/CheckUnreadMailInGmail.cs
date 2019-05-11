@@ -6,7 +6,7 @@ using OpenQA.Selenium.Support.UI;
 namespace Task2
 {
     /// <summary>
-    /// Class,for 
+    /// Class,for checking unreaded messages
     /// </summary>
     class CheckUnreadMailInGmail
     {
