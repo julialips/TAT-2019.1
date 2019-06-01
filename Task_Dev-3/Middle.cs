@@ -10,8 +10,8 @@ namespace Task_Dev_3
         /// </summary>
         public Middle()
         {
-            Salary += 250; //500
-            Productivity += 2; //5
+            Salary += 250; 
+            Productivity += 2; 
         }
     }
 }
