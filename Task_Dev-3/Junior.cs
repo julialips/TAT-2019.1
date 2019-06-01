@@ -10,8 +10,8 @@ namespace Task_Dev_3
         /// </summary>
         public Junior()
         {
-            Salary *= 1; //250
-            Productivity *= 1; //3
+            Salary *= 1; 
+            Productivity *= 1; 
         }
     }
 }
