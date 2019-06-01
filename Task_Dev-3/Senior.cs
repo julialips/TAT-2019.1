@@ -10,8 +10,8 @@ namespace Task_Dev_3
         /// </summary>
         public Senior()
         {
-            Salary += 450; //950
-            Productivity += 2; //8
+            Salary += 450; 
+            Productivity += 2;
         }
     }
 }
