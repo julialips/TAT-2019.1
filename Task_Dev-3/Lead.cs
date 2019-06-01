@@ -10,8 +10,8 @@ namespace Task_Dev_3
         /// </summary>
         public Lead()
         {
-            Salary += 800; //1750
-            Productivity += 2; //10
+            Salary += 800; 
+            Productivity += 2;
         }
     }
 }
