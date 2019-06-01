@@ -20,7 +20,11 @@ namespace Task_Dev_3
         private Senior senior;
         private Lead lead;
         private int InputProductivity { get; set; }
-       
+        
+        ///<summary>
+        /// It's a constructor our class
+        /// <param name="inputProductivity"> parametr from console </param>
+        /// </summary>
         public Company(int inputProductivity)
         {
             InputProductivity = inputProductivity;
@@ -29,6 +33,7 @@ namespace Task_Dev_3
             senior = new Senior();
             lead = new Lead();
         }
+        
         /// <summary>
         /// This criterion choose workers have maximum productivity within the sum
         /// </summary>
@@ -59,6 +64,7 @@ namespace Task_Dev_3
             Console.WriteLine("Juniors:");
             Console.WriteLine(juniorAmount);
         }
+        
         /// <summary>
         /// This criterion choose workers havin  minimal cost with fixed productivity
         /// </summary>
@@ -123,6 +129,7 @@ namespace Task_Dev_3
                 { Console.WriteLine("NOT enough money,for required productivity!"); }
             }
         }
+            
         /// <summary>
         /// Future method for choosing the minimum number of staff qualifications is higher.
         /// </summary>
