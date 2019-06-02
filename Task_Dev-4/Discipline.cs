@@ -14,6 +14,7 @@ namespace Task_Dev_4
         List<Seminar> seminarsList = new List<Seminar>();
         List<Laboratory> laboratoriesList = new List<Laboratory>();
         Random random = new Random();
+        
         /// <summary>
         /// method to override ToString
         /// </summary>
