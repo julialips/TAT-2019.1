@@ -30,7 +30,7 @@ namespace Task2
         {
             StartingMailPage mailPage = new StartingMailPage(driver);
             mailPage.EnterInMail(login, password);
-            Assert.IsTrue(driver.FindElement(By.XPath("")).Displayed);
+            Assert.IsTrue(driver.FindElement(By.XPath("Locator.NewPage")).Displayed);
         }
 
         [TearDown]
