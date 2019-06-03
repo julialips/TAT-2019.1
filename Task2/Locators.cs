@@ -54,7 +54,7 @@
             public string IncomingButtonLocator { get; } = "//*[text()='Входящие']";
             public string MoreopportunityButtonLocator { get; } = "//div[contains(@class,'G-asx T-I-J3 J-J5-Ji') and @aria-hidden='true']";//кнопка для выбора непрочитанных сообщений
             public string UnreadButtonLocator { get; } = "//*[text()='Непрочитанные']";
-            //  public string IncomingMailLocator { get; } = $"//*[@email='{sender}']";
+            public string IncomingMailLocator { get; } = "//*[@email='{sender}']";
             public string CheckMarkTrueLocator { get; } = "//*[@aria-checked='true']";
 
         }
