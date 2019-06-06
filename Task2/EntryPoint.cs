@@ -1,49 +1,30 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
-namespace Task2
+namespace valuta
 {
     /// <summary>
-    /// the main class Program,entry point to the application.
-    /// From here we get the string from command line, and check for compliance with conditions.
+    /// Main class of program.From here starts others methods.
     /// </summary>
-    class EntryPoint
+    class Program
     {
         /// <summary>
-        /// entrance to the application
+        /// Method which navigate to site, and downloading currencies in file
         /// </summary>
         /// <param name="args"></param>
-        /// <returns 0>Good start of program</returns>
-        /// <returns 1>Empty string</returns> 
-        /// <returns 2>Something went wrong</returns>
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
-            try
-            {
-                if (args.Length == 0)
-                {
-                    throw new FormatException();
-                }
+            IWebDriver webDriver = new ChromeDriver();
+            webDriver.Navigate().GoToUrl("https://www.bps-sberbank.by");
+            DownloaingKurs downloaing = new DownloaingKurs(webDriver);
 
-                for (int i = 0; i < args.Length; i++)
-                {
-                    Console.Write(args[i]);
-                    Console.Write(" >>> ");
-                }
+            DownloaingKurs kurs = new DownloaingKurs(webDriver);
+            List<Currency> currency = new List<Currency>();
+            kurs.LoadValues(currency);
 
-                var converter = new Converter();
-                Console.WriteLine(converter.Convert(args[0]));
-                return 0;
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("The entered string is empty , try again!");
-                return 1;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Oops,something went wrong,try again!");
-                return 2;
-            }
+            Factory factory = new Factory();
+            factory.GetCreator(args[0]);
         }
     }
 }
