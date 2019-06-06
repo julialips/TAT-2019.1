@@ -15,10 +15,10 @@ namespace valuta
 
         public IWebElement BuyUSD => this.driver.FindElement(By.XPath("//*[@class='BlockCurrencyExchangeRates__rate - item_buy - rate'[1]"));
         public IWebElement SellUSD => this.driver.FindElement(By.XPath("//*[@class=['BlockCurrencyExchangeRates__rate - item_sell - rate'][1]"));
-        public IWebElement BuyEUR => this.driver.FindElement(By.XPath("//table[@class='b-currency-table__best'][2]/tbody/tr/td[2]/p[1]/b"));
-        public IWebElement SellEUR => this.driver.FindElement(By.XPath("//table[@class='b-currency-table__best'][2]/tbody/tr/td[3]/p[1]/b"));
-        public IWebElement BuyRus => this.driver.FindElement(By.XPath("//table[@class='b-currency-table__best'][3]/tbody/tr/td[2]/p[1]/b"));
-        public IWebElement SellRus => this.driver.FindElement(By.XPath("//table[@class='b-currency-table__best'][3]/tbody/tr/td[3]/p[1]/b"));
+        public IWebElement BuyEUR => this.driver.FindElement(By.XPath("//*[@class='BlockCurrencyExchangeRates__rate - item_buy - rate'[2]"));
+        public IWebElement SellEUR => this.driver.FindElement(By.XPath("//*[@class=['BlockCurrencyExchangeRates__rate - item_sell - rate'][2]"));
+        public IWebElement BuyRus => this.driver.FindElement(By.XPath("//*[@class='BlockCurrencyExchangeRates__rate - item_buy - rate'[3]"));
+        public IWebElement SellRus => this.driver.FindElement(By.XPath("//*[@class=['BlockCurrencyExchangeRates__rate - item_sell - rate'][3]"));
 
         public DownloaingKurs(IWebDriver driver)
         {

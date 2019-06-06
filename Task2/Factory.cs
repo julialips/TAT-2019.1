@@ -12,18 +12,15 @@ namespace valuta
         {
             if (filename.Contains(".xml"))
             {
-                // IWebDriver webDriver = new ChromeDriver();
                 return new XMLCreator();
-               // XML.Write();
             }
             else if (filename.Contains(".json"))
             {
                 return new JSONCreator();
-                // JSON.Write();
             }
             else
             {
-                Console.WriteLine("Enter type of file(.xml or .json)");
+                Console.WriteLine("Enter type of file('.xml' or '.json')");
                 return null;
             }
         }
