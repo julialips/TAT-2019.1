@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cars>
+  <car>
+    <brand>kamaz</brand>
+    <model>a1</model>
+    <number>5</number>
+    <price>30000</price>
+  </car>
+  <car>
+    <brand>maz</brand>
+    <model>ab</model>
+    <number>8</number>
+    <price>31200</price>
+  </car>
+  <car>
+    <brand>faw</brand>
+    <model>almera</model>
+    <number>5</number>
+    <price>29000</price>
+  </car>
+  <car>
+    <brand>maz</brand>
+    <model>a2</model>
+    <number>2</number>
+    <price>29000</price>
+  </car>
+</cars>

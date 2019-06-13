@@ -28,6 +28,7 @@ namespace Task6
             try
             {
                 Console.WriteLine("Enter type :");
+
                 handlercars.CountAveragePriceEveryBrand(Console.ReadLine());
             }
             catch(Exception)
