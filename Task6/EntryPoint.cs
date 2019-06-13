@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace Task6
 {
@@ -9,7 +8,7 @@ namespace Task6
     class EntryPoint
     {
         /// <summary>
-        /// Entry poin of program.Here we get names of 2 xml files and start methods.
+        /// Entry poin of program.Here we get names of 2 xml files and start methods
         /// </summary>
         /// <param name="args"> name of xml file </param>
         static void Main(string[] args)

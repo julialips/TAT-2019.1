@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Xml;
 
 namespace Task6
@@ -35,7 +34,7 @@ namespace Task6
                 Console.WriteLine(" XML file is not found.");
             }
         }
-        
+      
         /// <summary>
         /// method for counting amount of brands
         /// </summary>
@@ -50,6 +49,7 @@ namespace Task6
         public int CountAmountOfCars()
         {
             return Cars.Select(car => car.Number).Sum();
+
         }
 
         /// <summary>
@@ -58,6 +58,7 @@ namespace Task6
         /// <returns></returns>
         public double CountAveragePriceOfCars()
         {
+
             return Cars.Select(car => car.Price).Average();
         }
 

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D8B69950-C0ED-4378-9A8B-3ED244F22846}</ProjectGuid>
+    <ProjectGuid>{B5D51FCE-6180-45F0-B8C7-4D99C01DE760}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task6</RootNamespace>
-    <AssemblyName>Task6</AssemblyName>
+    <RootNamespace>Task_Dev_3</RootNamespace>
+    <AssemblyName>Task_Dev-3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,30 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmountOfCars.cs" />
-    <Compile Include="AveragePriceOfCar.cs" />
-    <Compile Include="AveragePriceOfCarEveryBrand.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="CarsDataBase.cs" />
-    <Compile Include="CommandSelection.cs" />
-    <Compile Include="ICommand.cs" />
+    <Compile Include="Company.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Invoker.cs" />
+    <Compile Include="Junior.cs" />
+    <Compile Include="Lead.cs" />
+    <Compile Include="Middle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="HandlerCars.cs" />
-    <Compile Include="ReaderFromXML.cs" />
-    <Compile Include="TypesOfAllBrands.cs" />
+    <Compile Include="Senior.cs" />
+    <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Cars.xml">
-      <SubType>Designer</SubType>
-    </Content>
-
-    <Content Include="Trucks.xml" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

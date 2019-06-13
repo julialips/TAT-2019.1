@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Task6
 {
@@ -9,7 +9,6 @@ namespace Task6
     {
         private ICommand Command { get; set; }
         private Action ExecuteCommands { get; set; }
-
         /// <summary>
         /// method, using switch-case for choosing needed methods
         /// </summary>
@@ -97,3 +96,4 @@ namespace Task6
         }
     }
 }
+
