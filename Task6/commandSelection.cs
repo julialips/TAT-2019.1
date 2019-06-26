@@ -9,6 +9,7 @@ namespace Task6
     {
         private ICommand Command { get; set; }
         private Action ExecuteCommands { get; set; }
+
         /// <summary>
         /// method, using switch-case for choosing needed methods
         /// </summary>
@@ -51,7 +52,8 @@ namespace Task6
                     case "6":
                         invoker = null;
                         continue;
-                    сase "7":
+                    //  break;
+                    case "7":
                         break;
                     default:
                         Console.WriteLine("Chose number only from 1 to 6");
@@ -70,7 +72,6 @@ namespace Task6
             Passenger,
             Truck
         }
-        
         /// <summary>
         /// Methosd returns type of car 
         /// </summary>
@@ -96,4 +97,3 @@ namespace Task6
         }
     }
 }
-

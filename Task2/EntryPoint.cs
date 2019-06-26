@@ -17,35 +17,22 @@ namespace Task2
         {
             try
             {
-                IWebDriver webDriver = new ChromeDriver();
-                StartingMailPage startpage = new StartingMailPage(webDriver);
-                startpage.StartPage();
-                startpage.EnterInMail("alekseeva.katya98", "itisapassword");
+                if (args[0].Length == 0)
+                {
+                    throw new FormatException();
+                }
 
-                Message message = new Message(webDriver);
-                message.WriteMessage("lipskaya.julia.98@gmail.com", "Hello Julia!");
+                Console.Write(args[0]);
+                Console.Write(" >>> ");
 
-                LoginGmailPage login = new LoginGmailPage(webDriver);
-                login.StartPage();
-                login.EnterInGmail("lipskaya.julia.98", "1j3u5l7i9a");
-
-                CheckUnreadMailInGmail reader = new CheckUnreadMailInGmail(webDriver);
-                reader.CheckUnreadMail();
-
-                ReaderMessageInGmail gmail = new ReaderMessageInGmail(webDriver);
-                gmail.ReadingMessage();
-
-                TextMessageToMail textMessage = new TextMessageToMail(webDriver);
-                textMessage.TextingAnswerMessageToMail("Просто Катя");
-
-                startpage.StartPage();
-                startpage.EnterInMail("alekseeva.katya98", "itisapassword");
-
-                ReadingAndGettingMessageFromGmail messageFromGmail = new ReadingAndGettingMessageFromGmail(webDriver);
-                messageFromGmail.ReadingMessageFromGmail();
-
-                NewUserNameInMail newUserName = new NewUserNameInMail(webDriver);
-                newUserName.SettingsNickName(messageFromGmail.GetNewName()); 
+                var converter = new Converter();
+                Console.WriteLine(converter.Convert(args[0]));
+                return 0;
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("The entered string is empty or not valid,please, try again!");
+                return 1;
             }
             catch(Exception)
             {
