@@ -45,6 +45,7 @@
         public double  GetFlyTime()
         {  
             double time = lengthway / speedFlySpaceShip;
+            
             return time;
         }
     }
