@@ -1,4 +1,4 @@
-﻿using Autotests.GmailPage;
+using Autotests.GmailPage;
 using Autotests.MailPage;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
