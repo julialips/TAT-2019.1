@@ -37,7 +37,7 @@ namespace Autotests
                 gmail.ReadingMessage();
 
                 TextMessageToMail textMessage = new TextMessageToMail(webDriver);
-                textMessage.TextingAnswerMessageToMail("Просто Катя");
+                textMessage.TextingAnswerMessageToMail("Катя");
 
                 startpage.StartPage();
                 startpage.EnterInMail("alekseeva.katya98", "itisapassword");
