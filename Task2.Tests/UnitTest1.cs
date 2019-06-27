@@ -47,7 +47,7 @@ namespace Task2.Tests
         {
             Assert.Throws<Exception>
             (
-                () => new Converter()
+                 () => new Converter()
             );
         }
 
