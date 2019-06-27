@@ -15,8 +15,8 @@ namespace Task2
         private readonly List<char> softingVowels = new List<char> { 'е', 'ё', 'и', 'я', 'ю' };
         private readonly List<char> softVowels = new List<char> { 'е', 'ё', 'я', 'ю' };
         private readonly List<char> hardVowels = new List<char> { 'а', 'о', 'у', 'ы', 'э' };
-        private readonly List<char> softConsonants = new List<char> { 'б', 'в', 'г', 'д', 'з', 'к', 'л', 'м', 'н',
-            'п', 'р', 'с', 'т', 'ф', 'х' };
+        private readonly List<char> softConsonants = new List<char> { 'б', 'в', 'г', 'д', 'з', 'к', 'л', 'м',
+            'н', 'п', 'р', 'с', 'т', 'ф', 'х' };
         private readonly List<char> hardSoftSigns = new List<char> { 'ь', 'ъ' };
         private readonly List<char> voicelessСonsonants = new List<char> { 'б', 'в', 'д', 'з', 'ж', 'г' };
         private readonly Dictionary<char, char> dictVowels = new Dictionary<char, char>();
